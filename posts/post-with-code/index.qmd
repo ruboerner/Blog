@@ -1,8 +1,8 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "Ralph-Uwe Börner"
 date: "2022-09-30"
-categories: [news, code, analysis]
+categories: [news, code, julia]
 image: "image.jpg"
 jupyter: julia-1.8
 ---
@@ -12,3 +12,5 @@ This is a post with executable code.
 ```{julia}
 1 + 1
 ```
+
+$\alpha$ math rendering works quite well.

@@ -11,14 +11,14 @@
     "href": "index.html",
     "title": "Welcome to My Blog",
     "section": "",
-    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\nNo matching items"
+    "text": "news\n\n\ncode\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
-    "text": "1 + 1\n\n2"
+    "text": "1 + 1\n\n2\n\n\n\\(\\alpha\\) math rendering works quite well."
   },
   {
     "objectID": "posts/welcome/index.html",
