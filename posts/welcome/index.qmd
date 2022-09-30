@@ -3,7 +3,7 @@ title: "Welcome to my Blog"
 author: "Ralph-Uwe Börner"
 date: "2022-09-30"
 image: "quarto.png"
-categories: [news]
+categories: [quarto]
 ---
 
 # Welcome!
