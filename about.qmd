@@ -1,8 +1,8 @@
 ---
 title: "About"
-image: profile.jpg
+image: avatar_rub.jpg
 about:
-  template: jolla
+  template: solana
   links:
     - icon: twitter
       text: Twitter
@@ -15,6 +15,14 @@ about:
       href: https://github.com/ruboerner
 ---
 
-If you have to use the same code three times, write a function.
+> If you have to use the same code three times, write a function.\
+> If you have to explain the same thing three times, write a blog.
 
-If you have to explain the same thing three times, write a blog.
+My name is Ralph-Uwe Börner.\
+I teach geophysics at the Technische Universität Bergakademie Freiberg.\
+My research interests are
+
+-   Theory of electromagnetic methods in geophysics
+-   Potential theory and its applications in geophysics
+-   Numerical simulation of Maxwell's equations
+-   MATLAB and Julia
