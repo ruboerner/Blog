@@ -1,0 +1,27 @@
+---
+title: "Quarto and Julia"
+author: "Ralph-Uwe Börner"
+date: "2022-09-30"
+categories: [code, julia]
+image: "logo.png"
+---
+
+# Why mix Julia and Quarto?
+
+There are quite a few development environments available for Julia, e.g., [Visual Studio Code](https://code.visualstudio.com), [Jupyter](https://jupyter.org), [Pluto.jl](https://github.com/fonsp/Pluto.jl).
+
+All of the above can be used to develop code or implement and test ideas. The main differences are the intended workflow.
+
+For the purpose of teaching, until now I prefer Pluto.jl notebooks.
+
+However, even though exporting the final Pluto Notebook is possible without problems, the design of the exported HTML or PDF page cannot be altered. Further, there is no straightforward way to easily deploy a slide show presentation directly out of your notebook.
+
+There exist, however, *literate programming* tools that are able to generate, e.g., a tutorial or a documentation by parsing comments in the Julia source files - see, e.g.,
+
+-   Documenter.jl
+-   Literate.jl
+-   Franklin.jl
+-   Publish.jl
+-   Weave.jl.
+
+Further, *Jupyter notebooks* are web-based interactive computational environments for creating notebook documents. It contains an ordered list of input and output cells which can contain code, Markdown text, plots, and equations.

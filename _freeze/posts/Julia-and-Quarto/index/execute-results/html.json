@@ -1,0 +1,11 @@
+{
+  "hash": "2c484edb4785e5eb3492398bb97524d9",
+  "result": {
+    "markdown": "---\ntitle: Quarto and Julia\nauthor: Ralph-Uwe Börner\ndate: '2022-09-30'\ncategories:\n  - code\n  - julia\nimage: logo.png\n---\n\n# Why mix Julia and Quarto?\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
