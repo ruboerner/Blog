@@ -68,7 +68,7 @@
   <category>quarto</category>
   <guid>https://ruboerner.github.io/Blog/posts/welcome/index.html</guid>
   <pubDate>Thu, 29 Sep 2022 22:00:00 GMT</pubDate>
-  <media:content url="https://ruboerner.github.io/Blog/posts/welcome/quarto.png" medium="image" type="image/png" height="35" width="144"/>
+  <media:content url="https://ruboerner.github.io/Blog/posts/welcome/quarto.png" medium="image" type="image/png" height="44" width="144"/>
 </item>
 <item>
   <title>Quarto and Julia</title>
@@ -151,7 +151,7 @@ jupyter: "julia-1.8"
   <category>jupyter</category>
   <category>quarto</category>
   <guid>https://ruboerner.github.io/Blog/posts/jupyter/index.html</guid>
-  <pubDate>Fri, 30 Sep 2022 14:04:06 GMT</pubDate>
+  <pubDate>Fri, 30 Sep 2022 14:13:48 GMT</pubDate>
 </item>
 </channel>
 </rss>
