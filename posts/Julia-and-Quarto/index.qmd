@@ -3,7 +3,7 @@ title: "Quarto and Julia"
 author: "Ralph-Uwe Börner"
 date: "2022-09-30"
 categories: [code, julia]
-image: "logo.png"
+image: "Logo.png"
 ---
 
 # Why mix Julia and Quarto?
