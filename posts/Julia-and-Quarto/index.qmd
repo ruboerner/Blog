@@ -10,13 +10,13 @@ image: "logo.png"
 
 There are quite a few development environments available for Julia, e.g., [Visual Studio Code](https://code.visualstudio.com), [Jupyter](https://jupyter.org), [Pluto.jl](https://github.com/fonsp/Pluto.jl).
 
-All of the above can be used to develop code or implement and test ideas. The main differences are the intended workflow.
+All of the above can be used to develop code or implement and test ideas. The main difference is the intended workflow.
 
 For the purpose of teaching, until now I prefer Pluto.jl notebooks.
 
 However, even though exporting the final Pluto Notebook is possible without problems, the design of the exported HTML or PDF page cannot be altered. Further, there is no straightforward way to easily deploy a slide show presentation directly out of your notebook.
 
-There exist, however, *literate programming* tools that are able to generate, e.g., a tutorial or a documentation by parsing comments in the Julia source files - see, e.g.,
+There exist, however, *literate programming* tools that are able to generate, e.g., a tutorial or a documentation by parsing comments in the Julia source files --- see, e.g.,
 
 -   Documenter.jl
 -   Literate.jl

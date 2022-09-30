@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Welcome to my blog",
     "section": "",
-    "text": "news\n\n\ncode\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncode\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\nNo matching items"
+    "text": "news\n\n\ncode\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncode\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -39,6 +39,6 @@
     "href": "posts/Julia-and-Quarto/index.html",
     "title": "Quarto and Julia",
     "section": "",
-    "text": "There are quite a few development environments available for Julia, e.g., Visual Studio Code, Jupyter, Pluto.jl.\nAll of the above can be used to develop code or implement and test ideas. The main differences are the intended workflow.\nFor the purpose of teaching, until now I prefer Pluto.jl notebooks.\nHowever, even though exporting the final Pluto Notebook is possible without problems, the design of the exported HTML or PDF page cannot be altered. Further, there is no straightforward way to easily deploy a slide show presentation directly out of your notebook.\nThere exist, however, literate programming tools that are able to generate, e.g., a tutorial or a documentation by parsing comments in the Julia source files - see, e.g.,\n\nDocumenter.jl\nLiterate.jl\nFranklin.jl\nPublish.jl\nWeave.jl.\n\nFurther, Jupyter notebooks are web-based interactive computational environments for creating notebook documents. It contains an ordered list of input and output cells which can contain code, Markdown text, plots, and equations."
+    "text": "There are quite a few development environments available for Julia, e.g., Visual Studio Code, Jupyter, Pluto.jl.\nAll of the above can be used to develop code or implement and test ideas. The main difference is the intended workflow.\nFor the purpose of teaching, until now I prefer Pluto.jl notebooks.\nHowever, even though exporting the final Pluto Notebook is possible without problems, the design of the exported HTML or PDF page cannot be altered. Further, there is no straightforward way to easily deploy a slide show presentation directly out of your notebook.\nThere exist, however, literate programming tools that are able to generate, e.g., a tutorial or a documentation by parsing comments in the Julia source files — see, e.g.,\n\nDocumenter.jl\nLiterate.jl\nFranklin.jl\nPublish.jl\nWeave.jl.\n\nFurther, Jupyter notebooks are web-based interactive computational environments for creating notebook documents. It contains an ordered list of input and output cells which can contain code, Markdown text, plots, and equations."
   }
 ]

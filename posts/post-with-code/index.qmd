@@ -3,7 +3,6 @@ title: "Post With Code"
 author: "Ralph-Uwe Börner"
 date: "2022-09-30"
 categories: [news, code, julia]
-image: "image.jpg"
 jupyter: julia-1.8
 ---
 
