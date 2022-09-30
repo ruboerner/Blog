@@ -1,0 +1,20 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/ruboerner
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/ralph-uwe-b%C3%B6rner-ab36472b
+    - icon: github
+      text: Github
+      href: https://github.com/ruboerner
+---
+
+If you have to use the same code three times, write a function.
+
+If you have to explain the same thing three times, write a blog.

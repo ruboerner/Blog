@@ -1,0 +1,10 @@
+---
+title: "Welcome To My Blog"
+author: "Ralph-Uwe Börner"
+date: "2022-09-30"
+categories: [news]
+---
+
+This is the first post in a Quarto blog. Welcome!
+
+More to come!
