@@ -107,6 +107,7 @@
 </item>
 <item>
   <title>Jupyter example</title>
+  <dc:creator>Ralph-Uwe Börner</dc:creator>
   <link>https://ruboerner.github.io/Blog/posts/jupyter/index.html</link>
   <description><![CDATA[ 
 
@@ -151,7 +152,8 @@ jupyter: "julia-1.8"
   <category>jupyter</category>
   <category>quarto</category>
   <guid>https://ruboerner.github.io/Blog/posts/jupyter/index.html</guid>
-  <pubDate>Fri, 30 Sep 2022 14:13:48 GMT</pubDate>
+  <pubDate>Wed, 28 Sep 2022 22:00:00 GMT</pubDate>
+  <media:content url="https://ruboerner.github.io/Blog/posts/jupyter/main-logo.png" medium="image" type="image/png" height="43" width="144"/>
 </item>
 </channel>
 </rss>
