@@ -50,10 +50,10 @@
 <section id="welcome" class="level1">
 <h1>Welcome!</h1>
 <p>This is the first post in a Quarto blog.</p>
-</section>
-<section id="quarto" class="level1">
-<h1>Quarto</h1>
+<section id="why-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="why-quarto">Why Quarto?</h2>
 <p>Recently, I discovered <a href="http://quarto.org">Quarto</a>, which offers a functionality that I was missing in other tools.</p>
+</section>
 <section id="what-is-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
 <p>First and foremost, using Quarto one can easily deploy a website, a blog post, a presentation, a static html page, or you name it.</p>

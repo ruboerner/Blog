@@ -11,7 +11,7 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome to my Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog."
+    "text": "This is the first post in a Quarto blog.\n\n\nRecently, I discovered Quarto, which offers a functionality that I was missing in other tools.\n\n\n\nFirst and foremost, using Quarto one can easily deploy a website, a blog post, a presentation, a static html page, or you name it.\nThis blog is a Quarto project which I edit in RStudio.\nIts sources are hosted at GitHub and deployed as a static site using GitHub Pages."
   },
   {
     "objectID": "posts/welcome/index.html#what-is-quarto",

@@ -10,7 +10,7 @@ categories: [quarto]
 
 This is the first post in a Quarto blog.
 
-# Quarto
+## Why Quarto?
 
 Recently, I discovered [Quarto](http://quarto.org), which offers a functionality that I was missing in other tools.
 
