@@ -1,10 +1,22 @@
 ---
-title: "Welcome To My Blog"
+title: "Welcome to my Blog"
 author: "Ralph-Uwe Börner"
 date: "2022-09-30"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+# Welcome!
 
-More to come!
+This is the first post in a Quarto blog.
+
+# Quarto
+
+Recently, I discovered [Quarto](http://quarto.org), which offers a functionality that I was missing in other tools.
+
+## What is Quarto?
+
+First and foremost, using Quarto one can easily deploy a website, a blog post, a presentation, a static html page, or you name it.
+
+This blog is a Quarto project which I edit in [RStudio](http://www.rstudio.com).
+
+Its sources are hosted at [GitHub](http://github.com/ruboerner/Blog) and deployed as a static site using GitHub Pages.
