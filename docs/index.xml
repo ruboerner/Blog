@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>My Blog</title>
+<link>https://ruboerner.github.io/Blog/index.html</link>
+<atom:link href="https://ruboerner.github.io/Blog/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.1.251</generator>
+<lastBuildDate>Thu, 29 Sep 2022 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Post With Code</title>
+  <dc:creator>Ralph-Uwe Börner</dc:creator>
+  <link>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is a post with executable code.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="fl" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="fl" style="color: #AD0000;">1</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>2</code></pre>
+</div>
+</div>
+<p><img src="https://latex.codecogs.com/png.latex?%5Calpha"> math rendering works quite well.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <category>code</category>
+  <category>julia</category>
+  <guid>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</guid>
+  <pubDate>Thu, 29 Sep 2022 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Welcome to my Blog</title>
+  <dc:creator>Ralph-Uwe Börner</dc:creator>
+  <link>https://ruboerner.github.io/Blog/posts/welcome/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="welcome" class="level1">
+<h1>Welcome!</h1>
+<p>This is the first post in a Quarto blog.</p>
+</section>
+<section id="quarto" class="level1">
+<h1>Quarto</h1>
+<p>Recently, I discovered <a href="http://quarto.org">Quarto</a>, which offers a functionality that I was missing in other tools.</p>
+<section id="what-is-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
+<p>First and foremost, using Quarto one can easily deploy a website, a blog post, a presentation, a static html page, or you name it.</p>
+<p>This blog is a Quarto project which I edit in <a href="http://www.rstudio.com">RStudio</a>.</p>
+<p>Its sources are hosted at <a href="http://github.com/ruboerner/Blog">GitHub</a> and deployed as a static site using GitHub Pages.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>quarto</category>
+  <guid>https://ruboerner.github.io/Blog/posts/welcome/index.html</guid>
+  <pubDate>Thu, 29 Sep 2022 22:00:00 GMT</pubDate>
+  <media:content url="https://ruboerner.github.io/Blog/posts/welcome/quarto.png" medium="image" type="image/png" height="35" width="144"/>
+</item>
+<item>
+  <title>Quarto and Julia</title>
+  <dc:creator>Ralph-Uwe Börner</dc:creator>
+  <link>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="why-mix-julia-and-quarto" class="level1">
+<h1>Why mix Julia and Quarto?</h1>
+<p>There are quite a few development environments available for Julia, e.g., <a href="https://code.visualstudio.com">Visual Studio Code</a>, <a href="https://jupyter.org">Jupyter</a>, <a href="https://github.com/fonsp/Pluto.jl">Pluto.jl</a>.</p>
+<p>All of the above can be used to develop code or implement and test ideas. The main difference is the intended workflow.</p>
+<p>For the purpose of teaching, until now I prefer Pluto.jl notebooks.</p>
+<p>However, even though exporting the final Pluto Notebook is possible without problems, the design of the exported HTML or PDF page cannot be altered. Further, there is no straightforward way to easily deploy a slide show presentation directly out of your notebook.</p>
+<p>There exist, however, <em>literate programming</em> tools that are able to generate, e.g., a tutorial or a documentation by parsing comments in the Julia source files — see, e.g.,</p>
+<ul>
+<li>Documenter.jl</li>
+<li>Literate.jl</li>
+<li>Franklin.jl</li>
+<li>Publish.jl</li>
+<li>Weave.jl.</li>
+</ul>
+<p>Further, <em>Jupyter notebooks</em> are web-based interactive computational environments for creating notebook documents. It contains an ordered list of input and output cells which can contain code, Markdown text, plots, and equations.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>code</category>
+  <category>julia</category>
+  <guid>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</guid>
+  <pubDate>Thu, 29 Sep 2022 22:00:00 GMT</pubDate>
+  <media:content url="https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/logo.png" medium="image" type="image/png" height="90" width="144"/>
+</item>
+<item>
+  <title>Jupyter example</title>
+  <link>https://ruboerner.github.io/Blog/posts/jupyter/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="use-jupyter-notebooks-as-quarto-blog-posts" class="level1">
+<h1>Use Jupyter notebooks as Quarto blog posts</h1>
+<p>This blog post has been entirely written within a Jupyter Notebook.</p>
+<p>You can use existing Jupyter notebooks as blog entries with just a little modification!</p>
+<p>Quarto can only render Jupyter notebooks properly when you add a YAML header as first cell of your notebook. Just make sure, that this cell is a <em>raw cell</em>.</p>
+<p>Further, I have renamed the notebook to <code>index.ipynb</code> – though I’m not sure if this is really necessary. This assumption probably fits well with the conventional <code>index.html</code> files sitting in the other blog post folders.</p>
+<p>The YAML front matter of this notebook looks like this:</p>
+<pre><code>---
+title: "Jupyter example"
+categories: [code, jupyter, quarto]
+jupyter: "julia-1.8"
+---</code></pre>
+<p>The remaining cells are just plain Jupyter code cells.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><span class="im" style="color: #00769E;">using</span> <span class="bu" style="color: null;">Plots</span></span>
+<span id="cb2-2"><span class="fu" style="color: #4758AB;">theme</span>(<span class="op" style="color: #5E5E5E;">:</span>vibrant)</span></code></pre></div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">x <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">range</span>(<span class="fl" style="color: #AD0000;">0.0</span>, <span class="fl" style="color: #AD0000;">2</span>π, <span class="fl" style="color: #AD0000;">101</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>0.0:0.06283185307179587:6.283185307179586</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><span class="fu" style="color: #4758AB;">plot</span>(x, <span class="fu" style="color: #4758AB;">sin</span>.(x), label<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"sin(x)"</span>, xlabel<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"x"</span>, ylabel<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"y(x)"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<p><img src="https://ruboerner.github.io/Blog/posts/jupyter/index_files/figure-html/cell-4-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>code</category>
+  <category>jupyter</category>
+  <category>quarto</category>
+  <guid>https://ruboerner.github.io/Blog/posts/jupyter/index.html</guid>
+  <pubDate>Fri, 30 Sep 2022 14:02:18 GMT</pubDate>
+</item>
+</channel>
+</rss>

@@ -1,9 +1,12 @@
 project:
   type: website
   output-dir: docs
+  
+
 
 website:
   title: "My Blog"
+  site-url: https://ruboerner.github.io/Blog
   navbar:
     right:
       - about.qmd
@@ -11,6 +14,8 @@ website:
         href: https://github.com/ruboerner
       - icon: twitter
         href: https://twitter.com/ruboerner
+      - icon: rss
+        href: index.xml
 format:
   html:
     theme: spacelab

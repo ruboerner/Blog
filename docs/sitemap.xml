@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</loc>
+    <lastmod>2022-09-30T14:01:46.855Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/welcome/index.html</loc>
+    <lastmod>2022-09-30T14:01:47.235Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</loc>
+    <lastmod>2022-09-30T14:01:47.546Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/jupyter/index.html</loc>
+    <lastmod>2022-09-30T14:01:47.886Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/index.html</loc>
+    <lastmod>2022-09-30T14:02:18.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/about.html</loc>
+    <lastmod>2022-09-30T14:01:48.549Z</lastmod>
+  </url>
+</urlset>
