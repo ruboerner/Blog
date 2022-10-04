@@ -18,14 +18,11 @@ about:
 > If you have to use the same code three times, write a function.\
 > If you have to explain the same thing three times, write a blog.
 
-Hi, my name is Ralph-Uwe Börner.
-
-\
+My name is Ralph-Uwe Börner.\
 I teach geophysics at the [Technische Universität Bergakademie Freiberg](http://tu-freiberg.de).\
-
 My research interests are:
 
 -   Theory of electromagnetic methods in geophysics
 -   Potential theory and its applications in geophysics
 -   Numerical simulation of Maxwell's equations
--   MATLAB and Julia.
+-   MATLAB and Julia

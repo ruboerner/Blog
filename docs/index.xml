@@ -12,6 +12,41 @@
 <generator>quarto-1.1.251</generator>
 <lastBuildDate>Thu, 29 Sep 2022 22:00:00 GMT</lastBuildDate>
 <item>
+  <title>Quarto and Julia</title>
+  <dc:creator>Ralph-Uwe Börner</dc:creator>
+  <link>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="why-mix-julia-and-quarto" class="level1">
+<h1>Why mix Julia and Quarto?</h1>
+<p>There are quite a few development environments available for Julia, e.g., <a href="https://code.visualstudio.com">Visual Studio Code</a>, <a href="https://jupyter.org">Jupyter</a>, <a href="https://github.com/fonsp/Pluto.jl">Pluto.jl</a>.</p>
+<p>All of the above can be used to develop code or implement and test ideas. The main difference is the intended workflow.</p>
+<p>For the purpose of teaching, until now I prefer Pluto.jl notebooks.</p>
+<p>However, even though exporting the final Pluto Notebook is possible without problems, the design of the exported HTML or PDF page cannot be altered. Further, there is no straightforward way to easily deploy a slide show presentation directly out of your notebook.</p>
+<p>There exist, however, <em>literate programming</em> tools that are able to generate, e.g., a tutorial or a documentation by parsing comments in the Julia source files — see, e.g.,</p>
+<ul>
+<li>Documenter.jl</li>
+<li>Literate.jl</li>
+<li>Franklin.jl</li>
+<li>Publish.jl</li>
+<li>Weave.jl.</li>
+</ul>
+<p>Further, <em>Jupyter notebooks</em> are web-based interactive computational environments for creating notebook documents. It contains an ordered list of input and output cells which can contain code, Markdown text, plots, and equations.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>code</category>
+  <category>julia</category>
+  <guid>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</guid>
+  <pubDate>Thu, 29 Sep 2022 22:00:00 GMT</pubDate>
+  <media:content url="https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/Logo.png" medium="image" type="image/png" height="90" width="144"/>
+</item>
+<item>
   <title>Post With Code</title>
   <dc:creator>Ralph-Uwe Börner</dc:creator>
   <link>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</link>
@@ -53,6 +88,7 @@
 <section id="why-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="why-quarto">Why Quarto?</h2>
 <p>Recently, I discovered <a href="http://quarto.org">Quarto</a>, which offers a functionality that I was missing in other tools.</p>
+<p></p><div id="tweet-67091"></div><script>tweet={"url":"https:\/\/twitter.com\/ruboerner\/status\/1576608085971533826","author_name":"Ralph-Uwe Börner \uD83D\uDE37\uD83C\uDDEA\uD83C\uDDFA \uD83C\uDDFA\uD83C\uDDE6","author_url":"https:\/\/twitter.com\/ruboerner","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E. \u003Ca href=\"https:\/\/twitter.com\/quarto_pub?ref_src=twsrc%5Etfw\"\u003E@quarto_pub\u003C\/a\u003E is the discovery of the year when it comes to providing lecture material. \u003Ca href=\"https:\/\/twitter.com\/hashtag\/quartopub?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#quartopub\u003C\/a\u003E\u003C\/p\u003E&mdash; Ralph-Uwe Börner \uD83D\uDE37\uD83C\uDDEA\uD83C\uDDFA \uD83C\uDDFA\uD83C\uDDE6 (@ruboerner) \u003Ca href=\"https:\/\/twitter.com\/ruboerner\/status\/1576608085971533826?ref_src=twsrc%5Etfw\"\u003EOctober 2, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-67091").innerHTML = tweet["html"];</script><p></p>
 </section>
 <section id="what-is-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
@@ -69,41 +105,6 @@
   <guid>https://ruboerner.github.io/Blog/posts/welcome/index.html</guid>
   <pubDate>Thu, 29 Sep 2022 22:00:00 GMT</pubDate>
   <media:content url="https://ruboerner.github.io/Blog/posts/welcome/quarto.png" medium="image" type="image/png" height="44" width="144"/>
-</item>
-<item>
-  <title>Quarto and Julia</title>
-  <dc:creator>Ralph-Uwe Börner</dc:creator>
-  <link>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="why-mix-julia-and-quarto" class="level1">
-<h1>Why mix Julia and Quarto?</h1>
-<p>There are quite a few development environments available for Julia, e.g., <a href="https://code.visualstudio.com">Visual Studio Code</a>, <a href="https://jupyter.org">Jupyter</a>, <a href="https://github.com/fonsp/Pluto.jl">Pluto.jl</a>.</p>
-<p>All of the above can be used to develop code or implement and test ideas. The main difference is the intended workflow.</p>
-<p>For the purpose of teaching, until now I prefer Pluto.jl notebooks.</p>
-<p>However, even though exporting the final Pluto Notebook is possible without problems, the design of the exported HTML or PDF page cannot be altered. Further, there is no straightforward way to easily deploy a slide show presentation directly out of your notebook.</p>
-<p>There exist, however, <em>literate programming</em> tools that are able to generate, e.g., a tutorial or a documentation by parsing comments in the Julia source files — see, e.g.,</p>
-<ul>
-<li>Documenter.jl</li>
-<li>Literate.jl</li>
-<li>Franklin.jl</li>
-<li>Publish.jl</li>
-<li>Weave.jl.</li>
-</ul>
-<p>Further, <em>Jupyter notebooks</em> are web-based interactive computational environments for creating notebook documents. It contains an ordered list of input and output cells which can contain code, Markdown text, plots, and equations.</p>
-
-
-</section>
-
- ]]></description>
-  <category>code</category>
-  <category>julia</category>
-  <guid>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</guid>
-  <pubDate>Thu, 29 Sep 2022 22:00:00 GMT</pubDate>
-  <media:content url="https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/Logo.png" medium="image" type="image/png" height="90" width="144"/>
 </item>
 <item>
   <title>Jupyter example</title>

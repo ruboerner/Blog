@@ -11,7 +11,7 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome to my Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog.\n\n\nRecently, I discovered Quarto, which offers a functionality that I was missing in other tools.\n\n\n\nFirst and foremost, using Quarto one can easily deploy a website, a blog post, a presentation, a static html page, or you name it.\nThis blog is a Quarto project which I edit in RStudio.\nIts sources are hosted at GitHub and deployed as a static site using GitHub Pages."
+    "text": "This is the first post in a Quarto blog.\n\n\nRecently, I discovered Quarto, which offers a functionality that I was missing in other tools.\n\n\n\n\nFirst and foremost, using Quarto one can easily deploy a website, a blog post, a presentation, a static html page, or you name it.\nThis blog is a Quarto project which I edit in RStudio.\nIts sources are hosted at GitHub and deployed as a static site using GitHub Pages."
   },
   {
     "objectID": "posts/welcome/index.html#what-is-quarto",
@@ -39,13 +39,13 @@
     "href": "index.html",
     "title": "Welcome to my blog",
     "section": "",
-    "text": "news\n\n\ncode\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncode\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncode\n\n\njupyter\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\nNo matching items"
+    "text": "code\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncode\n\n\njupyter\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2022\n\n\nRalph-Uwe Börner\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Hi, my name is Ralph-Uwe Börner.\n\nI teach geophysics at the Technische Universität Bergakademie Freiberg.\n\nMy research interests are:\n\nTheory of electromagnetic methods in geophysics\nPotential theory and its applications in geophysics\nNumerical simulation of Maxwell’s equations\nMATLAB and Julia."
+    "text": "My name is Ralph-Uwe Börner.\nI teach geophysics at the Technische Universität Bergakademie Freiberg.\nMy research interests are:\n\nTheory of electromagnetic methods in geophysics\nPotential theory and its applications in geophysics\nNumerical simulation of Maxwell’s equations\nMATLAB and Julia"
   }
 ]

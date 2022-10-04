@@ -14,6 +14,8 @@ This is the first post in a Quarto blog.
 
 Recently, I discovered [Quarto](http://quarto.org), which offers a functionality that I was missing in other tools.
 
+{{< tweet ruboerner 1576608085971533826 >}}
+
 ## What is Quarto?
 
 First and foremost, using Quarto one can easily deploy a website, a blog post, a presentation, a static html page, or you name it.

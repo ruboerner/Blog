@@ -1,7 +1,7 @@
 {
-  "hash": "ce230a48a0cdc9a325cb675ff576ad5a",
+  "hash": "a8b962f5d341b8cee8ee062a48f297b8",
   "result": {
-    "markdown": "---\ntitle: Post With Code\nauthor: Ralph-Uwe Börner\ndate: '2022-09-30'\ncategories:\n  - news\n  - code\n  - julia\nimage: image.jpg\n---\n\nThis is a post with executable code.\n\n::: {.cell execution_count=1}\n``` {.julia .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\n2\n```\n:::\n:::\n\n\n$\\alpha$ math rendering works quite well.\n\n",
+    "markdown": "---\ntitle: Post With Code\nauthor: Ralph-Uwe Börner\ndate: '2022-09-30'\ncategories:\n  - news\n  - code\n  - julia\n---\n\nThis is a post with executable code.\n\n::: {.cell execution_count=1}\n``` {.julia .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\n2\n```\n:::\n:::\n\n\n$\\alpha$ math rendering works quite well.\n\n",
     "supporting": [
       "index_files"
     ],
