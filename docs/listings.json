@@ -3,9 +3,9 @@
     "listing": "/index.html",
     "items": [
       "/posts/coordinates/index.html",
-      "/posts/Julia-and-Quarto/index.html",
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html",
+      "/posts/Julia-and-Quarto/index.html",
       "/posts/jupyter/index.html"
     ]
   }

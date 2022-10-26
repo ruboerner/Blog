@@ -27,9 +27,11 @@ using DataFrames, CSV
 
 Let's assume that we have downloaded a set of coordinates from a handheld GPS receiver. The content of the data file `coords.dat` may look like this:
 
-    # lat, lon
-    50.924833, 13.330562
-    50.982648, 13.530406
+``` shell
+# lat, lon
+50.924833, 13.330562
+50.982648, 13.530406
+```
 
 We first read in the data:
 
