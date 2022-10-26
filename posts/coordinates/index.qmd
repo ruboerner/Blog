@@ -1,19 +1,19 @@
 ---
-title: "Coordinate transformations"
+title: "Coordinate transformations with Julia"
 author: "Ralph-Uwe Börner"
 date: "2022-10-26"
 categories: [code, julia]
 jupyter: julia-1.8
 ---
 
-This post is about geodetic coordinate transformations.
+This post is about geodetic coordinate transformations using `Julia`.
 
 The following question comes up frequently:
 
 ::: callout-important
 ## Problem 💻
 
-How can I transform coordinates given as "latitude, longitude" into some other coordinate system, say UTM?
+How can I transform coordinates given as "`latitude, longitude`" into some other coordinate system, e.g., UTM?
 :::
 
 The `Julia` package `Proj.jl` offers all functionality that is required.
@@ -49,7 +49,7 @@ The following step is essential. Since we transform data from one coordinate sys
 trans = Proj.Transformation("EPSG:4326", "EPSG:25833")
 ```
 
-The next lines will transform our coordinates into UTM zone 33:
+The next lines will finally transform our GPS coordinates into UTM zone 33 coordinates which we refer to as _easting_ and _northing_:
 
 ```{julia}
 etrs = [trans(latlon[i, :]) for i in 1:size(latlon, 1)]
