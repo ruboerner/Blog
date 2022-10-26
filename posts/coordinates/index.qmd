@@ -1,19 +1,19 @@
 ---
-title: "Coordinate transformations with Julia"
+title: "Geodetic coordinate transforms with Julia"
 author: "Ralph-Uwe Börner"
 date: "2022-10-26"
 categories: [code, julia]
 jupyter: julia-1.8
 ---
 
-This post is about geodetic coordinate transformations using `Julia`.
+This blog post is about geodetic coordinate transforms using the `Julia` programming language.
 
-The following question comes up frequently:
+In applied geophysics, the following question comes up frequently:
 
 ::: callout-important
 ## Problem 💻
 
-How can I transform coordinates given as "`latitude, longitude`" into some other coordinate system, e.g., UTM?
+How can I transform geographical coordinates given as "`latitude, longitude`" into some other coordinate system, e.g., UTM?
 :::
 
 The `Julia` package `Proj.jl` offers all functionality that is required.

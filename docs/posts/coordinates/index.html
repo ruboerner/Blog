@@ -9,7 +9,7 @@
 <meta name="author" content="Ralph-Uwe Börner">
 <meta name="dcterms.date" content="2022-10-26">
 
-<title>My Blog - Coordinate transformations with Julia</title>
+<title>My Blog - Geodetic coordinate transforms with Julia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -176,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Coordinate transformations with Julia</h1>
+      <h1 class="title">Geodetic coordinate transforms with Julia</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">code</div>
                 <div class="quarto-category">julia</div>
@@ -215,8 +215,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<p>This post is about geodetic coordinate transformations using <code>Julia</code>.</p>
-<p>The following question comes up frequently:</p>
+<p>This blog post is about geodetic coordinate transforms using the <code>Julia</code> programming language.</p>
+<p>In applied geophysics, the following question comes up frequently:</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -227,7 +227,7 @@ Problem 💻
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>How can I transform coordinates given as “<code>latitude, longitude</code>” into some other coordinate system, e.g., UTM?</p>
+<p>How can I transform geographical coordinates given as “<code>latitude, longitude</code>” into some other coordinate system, e.g., UTM?</p>
 </div>
 </div>
 <p>The <code>Julia</code> package <code>Proj.jl</code> offers all functionality that is required.</p>
@@ -242,7 +242,7 @@ Problem 💻
 <p>We first read in the data:</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(CSV.<span class="fu">File</span>(<span class="st">"coords.dat"</span>, delim<span class="op">=</span><span class="st">","</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
+<div class="cell-output cell-output-display" data-execution_count="45">
 
 <div class="data-frame"><p>2 rows × 2 columns</p><table class="data-frame table table-sm table-striped"><thead><tr><th></th><th># lat</th><th> lon</th></tr><tr><th></th><th title="Float64">Float64</th><th title="Float64">Float64</th></tr></thead><tbody><tr><th>1</th><td>50.9248</td><td>13.3306</td></tr><tr><th>2</th><td>50.9826</td><td>13.5304</td></tr></tbody></table></div>
 </div>
@@ -250,7 +250,7 @@ Problem 💻
 <p>Next we arrange the data such that it is suitable for processing with <code>Proj.jl</code>:</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>latlon <span class="op">=</span> <span class="fu">Array</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>2×2 Matrix{Float64}:
  50.9248  13.3306
  50.9826  13.5304</code></pre>
@@ -259,7 +259,7 @@ Problem 💻
 <p>The following step is essential. Since we transform data from one coordinate system into another, we have to inform <code>Proj.jl</code> about the source and target systems. To this end, we exploit the convenient EPSG codes.</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>trans <span class="op">=</span> Proj.<span class="fu">Transformation</span>(<span class="st">"EPSG:4326"</span>, <span class="st">"EPSG:25833"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div class="cell-output cell-output-display" data-execution_count="47">
 <pre><code>Transformation
     source: WGS 84
     target: ETRS89 / UTM zone 33N
