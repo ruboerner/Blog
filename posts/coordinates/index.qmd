@@ -21,7 +21,6 @@ The `Julia` package `Proj.jl` offers all functionality that is required.
 After installing the package using `Julia`'s package manager from the REPL, we are ready to go:
 
 ```{julia}
-#| 
 using Proj
 using DataFrames, CSV
 ```
@@ -29,7 +28,8 @@ using DataFrames, CSV
 Let's assume that we have downloaded a set of coordinates from a handheld GPS receiver. The content of the data file `coords.dat` may look like this:
 
     # lat, lon
-    50.92483350345329, 13.33056291517176
+    50.924833, 13.330562
+    50.982648, 13.530406
 
 We first read in the data:
 
@@ -49,7 +49,7 @@ The following step is essential. Since we transform data from one coordinate sys
 trans = Proj.Transformation("EPSG:4326", "EPSG:25833")
 ```
 
-The next lines will finally transform our GPS coordinates into UTM zone 33 coordinates which we refer to as _easting_ and _northing_:
+The next lines will finally transform our GPS coordinates into UTM zone 33 coordinates which we refer to as *easting* and *northing*:
 
 ```{julia}
 etrs = [trans(latlon[i, :]) for i in 1:size(latlon, 1)]

@@ -238,11 +238,12 @@ Problem 💻
 </div>
 <p>Let’s assume that we have downloaded a set of coordinates from a handheld GPS receiver. The content of the data file <code>coords.dat</code> may look like this:</p>
 <pre><code># lat, lon
-50.92483350345329, 13.33056291517176</code></pre>
+50.924833, 13.330562
+50.982648, 13.530406</code></pre>
 <p>We first read in the data:</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="fu">DataFrame</span>(CSV.<span class="fu">File</span>(<span class="st">"coords.dat"</span>, delim<span class="op">=</span><span class="st">","</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="10">
 
 <div class="data-frame"><p>2 rows × 2 columns</p><table class="data-frame table table-sm table-striped"><thead><tr><th></th><th># lat</th><th> lon</th></tr><tr><th></th><th title="Float64">Float64</th><th title="Float64">Float64</th></tr></thead><tbody><tr><th>1</th><td>50.9248</td><td>13.3306</td></tr><tr><th>2</th><td>50.9826</td><td>13.5304</td></tr></tbody></table></div>
 </div>
@@ -250,7 +251,7 @@ Problem 💻
 <p>Next we arrange the data such that it is suitable for processing with <code>Proj.jl</code>:</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>latlon <span class="op">=</span> <span class="fu">Array</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>2×2 Matrix{Float64}:
  50.9248  13.3306
  50.9826  13.5304</code></pre>
@@ -259,7 +260,7 @@ Problem 💻
 <p>The following step is essential. Since we transform data from one coordinate system into another, we have to inform <code>Proj.jl</code> about the source and target systems. To this end, we exploit the convenient EPSG codes.</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>trans <span class="op">=</span> Proj.<span class="fu">Transformation</span>(<span class="st">"EPSG:4326"</span>, <span class="st">"EPSG:25833"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="47">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>Transformation
     source: WGS 84
     target: ETRS89 / UTM zone 33N
@@ -276,8 +277,8 @@ Problem 💻
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> easting</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> northing;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>easting = [382670.4901574054, 396843.0546304857]
-northing = [5.64279329582307e6, 5.648923257065746e6]</code></pre>
+<pre><code>easting = [382670.42457542894, 396843.0546304857]
+northing = [5.642793241297958e6, 5.648923257065746e6]</code></pre>
 </div>
 </div>
 
