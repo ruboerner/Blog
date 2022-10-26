@@ -1,0 +1,51 @@
+---
+title: "Coordinate transformations"
+author: "Ralph-Uwe Börner"
+date: "2022-10-26"
+categories: [code, julia]
+jupyter: julia-1.8
+---
+This post is about geodetic coordinate transformations.
+
+The following question comes up frequently: How can I transform coordinates given as "latitude, longitude" to some other coordinate system, say UTM.
+
+The `Julia` package `Proj.jl` offers all functionality that is required.
+
+After installing the package using `Julia`'s package manager from the REPL, we are ready to go:
+
+```{julia}
+#| 
+using Proj
+using DataFrames, CSV
+```
+Let's assume that we have downloaded a set of coordinates from a handheld GPS receiver. The content of the data file `coords.dat` may look like this:
+```
+# lat, lon
+50.92483350345329, 13.33056291517176
+```
+We first read in the data:
+```{julia}
+df = DataFrame(CSV.File("coords.dat", delim=","))
+```
+
+Next we arrange the data such that it is suitable for processing with `Proj.jl`:
+```{julia}
+latlon = Array(df)
+```
+
+The following step is essential. Since we transform data from one coordinate system into another, we have to inform `Proj.jl` about the source and target systems. 
+To this end, we exploit the convenient EPSG codes.
+```{julia}
+trans = Proj.Transformation("EPSG:4326", "EPSG:25833")
+```
+The next lines will transform our coordinates into UTM zone 33:
+```{julia}
+etrs = [trans(latlon[i, :]) for i in 1:size(latlon, 1)]
+UTM = hcat(collect.(etrs)...);
+
+easting = UTM[1, :]
+northing = UTM[2, :]
+@show easting
+@show northing;
+```
+
