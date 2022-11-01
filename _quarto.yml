@@ -14,6 +14,8 @@ website:
         href: https://github.com/ruboerner
       - icon: twitter
         href: https://twitter.com/ruboerner
+      - icon: mastodon
+        href: https://mastodon.social/@ruboerner
       - icon: rss
         href: index.xml
 format:
