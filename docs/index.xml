@@ -50,7 +50,7 @@ Problem 💻
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">df <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">DataFrame</span>(CSV.<span class="fu" style="color: #4758AB;">File</span>(<span class="st" style="color: #20794D;">"coords.dat"</span>, delim<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">","</span>))</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 
-<div><div style="float: left;"><span>2×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;"><table class="data-frame table table-sm table-striped" style="margin-bottom: 6px;"><thead><tr class="header"><th class="rowNumber" style="font-weight: bold; text-align: right;">Row</th><th style="text-align: left;"># lat</th><th style="text-align: left;"> lon</th></tr><tr class="subheader headerLastRow"><th class="rowNumber" style="font-weight: bold; text-align: right;"></th><th title="Float64" style="text-align: left;">Float64</th><th title="Float64" style="text-align: left;">Float64</th></tr></thead><tbody><tr><td class="rowNumber" style="font-weight: bold; text-align: right;">1</td><td style="text-align: right;">50.9248</td><td style="text-align: right;">13.3306</td></tr><tr><td class="rowNumber" style="font-weight: bold; text-align: right;">2</td><td style="text-align: right;">50.9826</td><td style="text-align: right;">13.5304</td></tr></tbody></table></div>
+<div class="data-frame"><p>2 rows × 2 columns</p><table class="data-frame table table-sm table-striped"><thead><tr><th></th><th># lat</th><th> lon</th></tr><tr><th></th><th title="Float64">Float64</th><th title="Float64">Float64</th></tr></thead><tbody><tr><th>1</th><td>50.9248</td><td>13.3306</td></tr><tr><th>2</th><td>50.9826</td><td>13.5304</td></tr></tbody></table></div>
 </div>
 </div>
 <p>Next we arrange the data such that it is suitable for processing with <code>Proj.jl</code>:</p>
@@ -83,7 +83,7 @@ Problem 💻
 <span id="cb8-7"><span class="pp" style="color: #AD0000;">@show</span> northing;</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>easting = [382670.42457542894, 396843.0546304857]
-northing = [5.642793241297958e6, 5.648923257065745e6]</code></pre>
+northing = [5.642793241297958e6, 5.648923257065746e6]</code></pre>
 </div>
 </div>
 

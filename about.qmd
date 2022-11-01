@@ -28,4 +28,5 @@ My research interests are:
 -   Theory of electromagnetic methods in geophysics
 -   Potential theory and its applications in geophysics
 -   Numerical simulation of Maxwell's equations
+-   Finite Elements
 -   MATLAB and Julia
