@@ -9,8 +9,173 @@
 <link>https://ruboerner.github.io/Blog/index.html</link>
 <atom:link href="https://ruboerner.github.io/Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.2.253</generator>
-<lastBuildDate>Tue, 25 Oct 2022 22:00:00 GMT</lastBuildDate>
+<generator>quarto-1.2.269</generator>
+<lastBuildDate>Wed, 23 Nov 2022 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Geophysical inversion</title>
+  <dc:creator>Ralph-Uwe Börner</dc:creator>
+  <link>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="inversion-of-dc-resistivity-data-with-pygimli" class="level1">
+<h1>Inversion of DC resistivity data with <code>pyGIMLi</code></h1>
+<p>The aim of the inversion is to reconstruct the spatial distribution of resistivity in the subsurface. This is based on the measured data, usually ohmic resistances <img src="https://latex.codecogs.com/png.latex?R(L)"> in <img src="https://latex.codecogs.com/png.latex?%5COmega"> or apparent resistivities <img src="https://latex.codecogs.com/png.latex?%5Crho_s(L)"> in <img src="https://latex.codecogs.com/png.latex?%5COmega%5Ccdot%20m">. All measured values depend on the location and the geoelectric electrode configuration (denoted here by <img src="https://latex.codecogs.com/png.latex?L">).</p>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>The <code>pyGIMLi</code> is a Python library. We assume that a Python environment is already installed. The easiest option is <a href="https://www.anaconda.com/products/individual"><em>anaconda</em></a>.</p>
+<p>First, <code>pyGIMLi</code> must be installed so that it can be accessed under Python. This is done with <code>conda</code>:</p>
+<pre class="shell"><code>conda install -c gimli -c conda-forge pygimli=1.3.0</code></pre>
+</section>
+<section id="preparation" class="level3">
+<h3 class="anchored" data-anchor-id="preparation">Preparation</h3>
+<p>We import the two libraries <code>pygimli</code> and <code>numpy</code>.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="op" style="color: #5E5E5E;">%</span>matplotlib inline</span></code></pre></div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;">import</span> pygimli <span class="im" style="color: #00769E;">as</span> pg</span>
+<span id="cb3-2"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb3-3"><span class="im" style="color: #00769E;">from</span> pygimli.physics <span class="im" style="color: #00769E;">import</span> ert</span>
+<span id="cb3-4"><span class="im" style="color: #00769E;">from</span> pygimli.physics.ert <span class="im" style="color: #00769E;">import</span> ERTManager</span></code></pre></div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="bu" style="color: null;">print</span>(pg.__version__)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.2.6</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="the-data-format" class="level1">
+<h1>The data format</h1>
+<p><code>pyGIMLi</code> expects the measured data in a special file format, the <em>Unified Data Format</em> <a href="https://gitlab.com/resistivity-net/bert#the-unified-data-format">(description on the project page of BERT)</a>. These are ASCII files, which can be edited with all common text editors.</p>
+<p>Such a measured value file contains the following sections: - Number of electrodes as well as coordinates (position and height) of the electrodes with implicit numbering - Number of measured values as well as the data resulting in each case from the combination of two to four electrodes.</p>
+<p>The example shows a small data set with 6 electrodes and 6 single measurements in the configuration <em>Dipole-Dipole</em> (recognizable by the order <em>a b m n</em> of the electrodes and probes). The 5th column of the data block contains the apparent resistivity (<code>rhoa</code>) in <img src="https://latex.codecogs.com/png.latex?%5COmega%5Ccdot%20m">.</p>
+<pre class="text"><code>6# Number of electrodes
+# x z position for each electrode
+0     0
+1     0
+2     0 # loose ground
+3     0
+4     0
+5     0
+6# Number of data
+# a b m n rhoa
+1   2   3   4  231.2
+2   3   4   5  256.7
+3   4   5   6  312.8 
+1   2   4   5  12.1 # possibly an outlier
+2   3   5   6  199.7
+1   2   5   6  246.2</code></pre>
+<section id="inversion-of-a-field-data-set" class="level2">
+<h2 class="anchored" data-anchor-id="inversion-of-a-field-data-set">Inversion of a field data set</h2>
+<section id="background" class="level3">
+<h3 class="anchored" data-anchor-id="background">Background</h3>
+<p>For this example, we use data from a measurement above the piped stream “Goldbach” in the center of Freiberg.</p>
+<p>The Goldbach, also known as the Saubach, is an approximately 5 km long left tributary of the Münzbach in Freiberg.</p>
+<p>Its entire course is located in the territory of the city of Freiberg. The headwaters are located between the Großer Teich and the Mittelteich ponds or around these ponds in the Freiberg city forest at an altitude of about 460 meters. After passing the Mittelteich, it flows about 300 m to the northwest and then turns almost 90° to the northeast. Parallel to the Ölmühlenweg it reaches the development boundary of the city of Freiberg. Here, at the level of the Schützenhaus on Chemnitzer Straße, it enters a piped section about 400 m long, which ends at the Mühlteich. After flowing through the Mühlteich, after about 200 m it reaches the Hammerteich with the former Freibergsdorfer Hammerwerk, to which it supplied the service water at that time. After another 800 m it is again piped. After flowing through the Kreuzteiche and the Schlüsselteich, it reaches the Münzbach in the Freiberg district of Loßnitz after about 5 km in a piped condition, having meanwhile turned to a more northerly direction.</p>
+</section>
+<section id="dc-resistivity-profile-setup" class="level3">
+<h3 class="anchored" data-anchor-id="dc-resistivity-profile-setup">DC resistivity profile setup</h3>
+<p>The profile measurement was carried out with the <em>Wenner</em>, and <em>Dipole-Dipole</em> configurations using 21 electrodes.</p>
+<p>The dipole-dipole data set consists of 80 individual measurements, and the Wenner data set consists of 63 individual measurements. All data is stored in the file <code>parkall.mea</code>.</p>
+<p>The Python object <code>wenner</code> contains all measured data:</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">wenner <span class="op" style="color: #5E5E5E;">=</span> pg.load(<span class="st" style="color: #20794D;">"parkall.mea"</span>)</span>
+<span id="cb8-2"><span class="bu" style="color: null;">print</span>(wenner)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data: Sensors: 21 data: 143, nonzero entries: ['a', 'b', 'm', 'n', 'rhoa', 'valid']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">wenner[<span class="st" style="color: #20794D;">'k'</span>] <span class="op" style="color: #5E5E5E;">=</span> ert.createGeometricFactors(wenner, numerical<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">True</span>)</span></code></pre></div>
+</div>
+<p>In the <code>pyGIMLi</code> method <code>ERTManager()</code> all functions for the inversion of geoelectric data (<em>Electrical Resistivity Tomography</em>, ERT) are implemented.</p>
+<p>The object <code>ertwenner</code> will hold, among others, the model response and the model parameters.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">ertwenner <span class="op" style="color: #5E5E5E;">=</span> ERTManager()</span></code></pre></div>
+</div>
+<p>Since our data set does not contain measurement errors, we estimate plausible absolute and relative data errors. Absolute errors are given in <img src="https://latex.codecogs.com/png.latex?%5COmega%5Ccdot%20m">.</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">wenner[<span class="st" style="color: #20794D;">'err'</span>] <span class="op" style="color: #5E5E5E;">=</span> ertwenner.estimateError(wenner, absoluteError<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">0.1</span>, relativeError<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">0.03</span>)</span></code></pre></div>
+</div>
+<p>The following figure shows <em>pseudosections</em> of the <strong>apparent resistivity</strong> <img src="https://latex.codecogs.com/png.latex?%5Crho_s">. The trapezoidal shape comes from the arbitrary choice of the horizontal reference point in the profile plot for the Wenner or dipole-dipole arrangement. The ordinates in the following two figures represent the electrode spacing for Wenner (WE) and the separation between current pole and voltage dipoles for the dipole-dipole (DD) array. <strong>Note: The vertical axis is not a depth axis!</strong></p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">ertwenner.showData(wenner, cMap<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"RdBu_r"</span>)<span class="op" style="color: #5E5E5E;">;</span></span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-9-output-1.png" width="596" height="431"></p>
+</div>
+</div>
+</section>
+<section id="data-inversion" class="level3">
+<h3 class="anchored" data-anchor-id="data-inversion">Data inversion</h3>
+<p>The method <code>ert.invert</code> performs the inversion of the data (<code>data</code>) for a specified regularization parameter <img src="https://latex.codecogs.com/png.latex?%5Clambda"> (<code>lam=10</code>) and a maximum model depth of <code>paraDepth=10</code> meters and a maximum triangular size of the finite elements of <code>paraMaxCellSize=1</code> <img src="https://latex.codecogs.com/png.latex?m%5E2">.</p>
+<p>The results of the inversion calculation – the distribution of resistivity in the subsurface and the model response – are stored in the object <code>mod</code>.</p>
+<p>The <code>lam</code> parameter is assigned the value of the selected <em>regularization parameter</em> <img src="https://latex.codecogs.com/png.latex?%5Clambda">.</p>
+<p>If the value of <img src="https://latex.codecogs.com/png.latex?%5Clambda"> is too low, a singularity of the least squares problem, if present, is expressed by strongly fluctuating values in the resistivity distribution in the subsurface. In the opposite case, if <img src="https://latex.codecogs.com/png.latex?%5Clambda"> is too large, the resistivity distribution becomes very smooth.</p>
+<p>Here we can try out what influence the regularization parameter has on the solution of our problem.</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">lam <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">10</span></span></code></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">modwenner <span class="op" style="color: #5E5E5E;">=</span> ertwenner.invert(wenner, lam<span class="op" style="color: #5E5E5E;">=</span>lam, paraMaxCellSize<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">0.1</span>, paraDepth<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">6</span>, verbose<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">False</span>)<span class="op" style="color: #5E5E5E;">;</span></span></code></pre></div>
+</div>
+<p>The following figures illustrate the relationship between the model parameters (<img src="https://latex.codecogs.com/png.latex?%5Crho(%5Cmathbf%20r)">) and the measured apparent resistivity (<code>Data</code>) and the model response (<code>Response</code>).</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">ertwenner.showResultAndFit(cMap<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"RdBu_r"</span>)<span class="op" style="color: #5E5E5E;">;</span></span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-12-output-1.png" width="659" height="469"></p>
+</div>
+</div>
+<p>The Goldbach flows in a concrete pipe at about profile meter 12.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">ertwenner.showModel(modwenner, cMap<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"RdBu_r"</span>)<span class="op" style="color: #5E5E5E;">;</span></span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-13-output-1.png" width="586" height="264"></p>
+</div>
+</div>
+<p>Of interest is the goodness of fit, which we refer to as <em>misfit</em>. This is the relative error between data and model response. A graphical representation of this error is informative:</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">misfitwe <span class="op" style="color: #5E5E5E;">=</span> ertwenner.inv.response <span class="op" style="color: #5E5E5E;">/</span> wenner[<span class="st" style="color: #20794D;">'rhoa'</span>] <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">100</span> <span class="op" style="color: #5E5E5E;">-</span> <span class="dv" style="color: #AD0000;">100</span></span>
+<span id="cb18-2">me <span class="op" style="color: #5E5E5E;">=</span> np.<span class="bu" style="color: null;">max</span>(np.<span class="bu" style="color: null;">abs</span>(misfitwe))</span>
+<span id="cb18-3">pg.show(wenner, misfitwe, cMap<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"RdBu_r"</span>, cMin<span class="op" style="color: #5E5E5E;">=-</span>me, cMax<span class="op" style="color: #5E5E5E;">=</span>me, label<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"misfit (%)"</span>)<span class="op" style="color: #5E5E5E;">;</span></span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-14-output-1.png" width="599" height="429"></p>
+</div>
+</div>
+<p>The global misfit is described with the <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2">-statistic and amounts to</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">ertwenner.inv.chi2()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="172">
+<pre><code>0.8469349648613855</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>We have seen that the inversion result can be influenced by the choice of different parameters. Especially the data fitting and model properties are affected.</p>
+<ul>
+<li>Which parameter controls the roughness of the model?</li>
+</ul>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>code</category>
+  <category>python</category>
+  <category>geophysics</category>
+  <guid>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</guid>
+  <pubDate>Wed, 23 Nov 2022 23:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Geodetic coordinate transforms with Julia</title>
   <dc:creator>Ralph-Uwe Börner</dc:creator>
@@ -172,7 +337,7 @@ northing = [5.642793241297958e6, 5.648923257065746e6]</code></pre>
 <section id="why-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="why-quarto">Why Quarto?</h2>
 <p>Recently, I discovered <a href="http://quarto.org">Quarto</a>, which offers a functionality that I was missing in other tools.</p>
-<p></p><div id="tweet-35054"></div><script>tweet={"url":"https:\/\/twitter.com\/ruboerner\/status\/1576608085971533826","author_name":"Ralph-Uwe Börner","author_url":"https:\/\/twitter.com\/ruboerner","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E. \u003Ca href=\"https:\/\/twitter.com\/quarto_pub?ref_src=twsrc%5Etfw\"\u003E@quarto_pub\u003C\/a\u003E is the discovery of the year when it comes to providing lecture material. \u003Ca href=\"https:\/\/twitter.com\/hashtag\/quartopub?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#quartopub\u003C\/a\u003E\u003C\/p\u003E&mdash; Ralph-Uwe Börner (@ruboerner) \u003Ca href=\"https:\/\/twitter.com\/ruboerner\/status\/1576608085971533826?ref_src=twsrc%5Etfw\"\u003EOctober 2, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-35054").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-84591"></div><script>tweet={"url":"https:\/\/twitter.com\/ruboerner\/status\/1576608085971533826","author_name":"Ralph-Uwe Börner","author_url":"https:\/\/twitter.com\/ruboerner","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E. \u003Ca href=\"https:\/\/twitter.com\/quarto_pub?ref_src=twsrc%5Etfw\"\u003E@quarto_pub\u003C\/a\u003E is the discovery of the year when it comes to providing lecture material. \u003Ca href=\"https:\/\/twitter.com\/hashtag\/quartopub?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#quartopub\u003C\/a\u003E\u003C\/p\u003E&mdash; Ralph-Uwe Börner (@ruboerner) \u003Ca href=\"https:\/\/twitter.com\/ruboerner\/status\/1576608085971533826?ref_src=twsrc%5Etfw\"\u003EOctober 2, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-84591").innerHTML = tweet["html"];</script><p></p>
 </section>
 <section id="what-is-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>

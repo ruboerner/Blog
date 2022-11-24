@@ -1,0 +1,20 @@
+---
+title: "How to locate a piped stream"
+author: "Ralph-Uwe Börner"
+date: "2022-11-24"
+categories: [code, python, geophysics]
+draft: true
+---
+
+## Problem setting
+
+In a geophysical field survey, we wanted to locate an underground stream in the urban area of Freiberg.
+
+The Goldbach, also known as the Saubach, is an approximately 5 km long left tributary of the Münzbach in Freiberg.
+
+Its entire course is located in the territory of the city of Freiberg. The headwaters are located between the Großer Teich and the Mittelteich ponds or around these ponds in the Freiberg city forest at an altitude of about 460 meters. After passing the Mittelteich, it flows about 300 m to the northwest and then turns almost 90° to the northeast. Parallel to the Ölmühlenweg it reaches the development boundary of the city of Freiberg. Here, at the level of the Schützenhaus on Chemnitzer Straße, it enters a piped section about 400 m long, which ends at the Mühlteich. After flowing through the Mühlteich, after about 200 m it reaches the Hammerteich with the former Freibergsdorfer Hammerwerk, to which it supplied the service water at that time. After another 800 m it is again piped. After flowing through the Kreuzteiche and the Schlüsselteich, it reaches the Münzbach in the Freiberg district of Loßnitz after about 5 km in a piped condition, having meanwhile turned to a more northerly direction.
+
+
+
+## Geophysical experiment
+
