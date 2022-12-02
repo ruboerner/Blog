@@ -1,0 +1,47 @@
+---
+title: "What is Bayesian inference"
+author: "Ralph-Uwe Börner"
+date: "2022-12-02"
+categories: [science]
+jupyter: julia-1.8
+---
+
+# What is Bayesian inference?
+
+Bayesian inference is a mathematical method for estimating the values of unknown parameters based on observed data and prior knowledge or beliefs about the parameters. It is a type of statistical inference that is based on Bayes' theorem, which is a fundamental result in probability theory.
+
+The basic idea of Bayesian inference is to use Bayes' theorem to update our beliefs or knowledge about the values of the unknown parameters based on the observed data. This is done by expressing our prior beliefs about the parameters as a probability distribution, known as the prior distribution. Then, we use Bayes' theorem to calculate the posterior distribution, which represents our updated beliefs about the parameters based on the observed data.
+
+Bayesian inference has many advantages over other methods of statistical inference. It allows us to incorporate prior knowledge or beliefs about the parameters into our analysis, which can improve the accuracy of our estimates. It also allows us to easily incorporate uncertainty and incorporate new data as it becomes available. Additionally, Bayesian inference provides a natural framework for modeling complex systems, where the relationships between the variables are often unknown or uncertain.
+
+Overall, Bayesian inference is a powerful and flexible method for estimating the values of unknown parameters based on observed data and prior knowledge. It is widely used in many fields, including statistics, machine learning, and engineering, and it has many applications in data analysis and decision making.
+
+Here is an example of Julia code that uses the `Turing.jl` package to perform Bayesian inference on a simple model. This code uses the Monte Carlo Markov Chain (MCMC) sampling method to estimate the values of the unknown parameters.
+
+```{julia}
+#| eval: false
+using Turing
+
+# Define the model
+@model begin
+  # Define the unknown parameters
+  x ~ Normal(0, 1)
+  y ~ Normal(0, 1)
+
+  # Define the data
+  z = x + y
+end
+
+# Sample from the posterior distribution using MCMC
+samples = sample(model, MCMC(), 1000)
+
+# Print the estimated values of x and y
+println("Estimated value of x: ", mean(samples[:x]))
+println("Estimated value of y: ", mean(samples[:y]))
+```
+
+In this code, the `@model` block defines the model that we want to fit to the data. It specifies that the unknown parameters x and y are normally distributed with mean 0 and standard deviation 1. The z variable is defined as the sum of x and y, which represents the observed data.
+
+Next, the `sample()` function is used to sample from the posterior distribution of the model using MCMC. This generates a set of samples that approximate the posterior distribution, and the `mean()` function is used to estimate the mean values of x and y from the samples.
+
+This simple example shows how to use the `Turing.jl` package to perform Bayesian inference on a model with unknown parameters. The same approach can be used for more complex models and data, and the `Turing.jl` package provides many advanced features for modeling and inference.

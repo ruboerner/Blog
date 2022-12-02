@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Bayes/index.html",
       "/posts/DC_in_the_park/pygimli_inversion.html",
       "/posts/coordinates/index.html",
       "/posts/Julia-and-Quarto/index.html",

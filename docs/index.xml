@@ -10,7 +10,55 @@
 <atom:link href="https://ruboerner.github.io/Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.2.269</generator>
-<lastBuildDate>Wed, 23 Nov 2022 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 01 Dec 2022 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>What is Bayesian inference</title>
+  <dc:creator>Ralph-Uwe Börner</dc:creator>
+  <link>https://ruboerner.github.io/Blog/posts/Bayes/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="what-is-bayesian-inference" class="level1">
+<h1>What is Bayesian inference?</h1>
+<p>Bayesian inference is a mathematical method for estimating the values of unknown parameters based on observed data and prior knowledge or beliefs about the parameters. It is a type of statistical inference that is based on Bayes’ theorem, which is a fundamental result in probability theory.</p>
+<p>The basic idea of Bayesian inference is to use Bayes’ theorem to update our beliefs or knowledge about the values of the unknown parameters based on the observed data. This is done by expressing our prior beliefs about the parameters as a probability distribution, known as the prior distribution. Then, we use Bayes’ theorem to calculate the posterior distribution, which represents our updated beliefs about the parameters based on the observed data.</p>
+<p>Bayesian inference has many advantages over other methods of statistical inference. It allows us to incorporate prior knowledge or beliefs about the parameters into our analysis, which can improve the accuracy of our estimates. It also allows us to easily incorporate uncertainty and incorporate new data as it becomes available. Additionally, Bayesian inference provides a natural framework for modeling complex systems, where the relationships between the variables are often unknown or uncertain.</p>
+<p>Overall, Bayesian inference is a powerful and flexible method for estimating the values of unknown parameters based on observed data and prior knowledge. It is widely used in many fields, including statistics, machine learning, and engineering, and it has many applications in data analysis and decision making.</p>
+<p>Here is an example of Julia code that uses the <code>Turing.jl</code> package to perform Bayesian inference on a simple model. This code uses the Monte Carlo Markov Chain (MCMC) sampling method to estimate the values of the unknown parameters.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;">using</span> <span class="bu" style="color: null;">Turing</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;"># Define the model</span></span>
+<span id="cb1-4"><span class="pp" style="color: #AD0000;">@model</span> <span class="cf" style="color: #003B4F;">begin</span></span>
+<span id="cb1-5">  <span class="co" style="color: #5E5E5E;"># Define the unknown parameters</span></span>
+<span id="cb1-6">  x <span class="op" style="color: #5E5E5E;">~</span> <span class="fu" style="color: #4758AB;">Normal</span>(<span class="fl" style="color: #AD0000;">0</span>, <span class="fl" style="color: #AD0000;">1</span>)</span>
+<span id="cb1-7">  y <span class="op" style="color: #5E5E5E;">~</span> <span class="fu" style="color: #4758AB;">Normal</span>(<span class="fl" style="color: #AD0000;">0</span>, <span class="fl" style="color: #AD0000;">1</span>)</span>
+<span id="cb1-8"></span>
+<span id="cb1-9">  <span class="co" style="color: #5E5E5E;"># Define the data</span></span>
+<span id="cb1-10">  z <span class="op" style="color: #5E5E5E;">=</span> x <span class="op" style="color: #5E5E5E;">+</span> y</span>
+<span id="cb1-11"><span class="cf" style="color: #003B4F;">end</span></span>
+<span id="cb1-12"></span>
+<span id="cb1-13"><span class="co" style="color: #5E5E5E;"># Sample from the posterior distribution using MCMC</span></span>
+<span id="cb1-14">samples <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">sample</span>(model, <span class="fu" style="color: #4758AB;">MCMC</span>(), <span class="fl" style="color: #AD0000;">1000</span>)</span>
+<span id="cb1-15"></span>
+<span id="cb1-16"><span class="co" style="color: #5E5E5E;"># Print the estimated values of x and y</span></span>
+<span id="cb1-17"><span class="fu" style="color: #4758AB;">println</span>(<span class="st" style="color: #20794D;">"Estimated value of x: "</span>, <span class="fu" style="color: #4758AB;">mean</span>(samples[<span class="op" style="color: #5E5E5E;">:</span>x]))</span>
+<span id="cb1-18"><span class="fu" style="color: #4758AB;">println</span>(<span class="st" style="color: #20794D;">"Estimated value of y: "</span>, <span class="fu" style="color: #4758AB;">mean</span>(samples[<span class="op" style="color: #5E5E5E;">:</span>y]))</span></code></pre></div>
+</div>
+<p>In this code, the <code>@model</code> block defines the model that we want to fit to the data. It specifies that the unknown parameters x and y are normally distributed with mean 0 and standard deviation 1. The z variable is defined as the sum of x and y, which represents the observed data.</p>
+<p>Next, the <code>sample()</code> function is used to sample from the posterior distribution of the model using MCMC. This generates a set of samples that approximate the posterior distribution, and the <code>mean()</code> function is used to estimate the mean values of x and y from the samples.</p>
+<p>This simple example shows how to use the <code>Turing.jl</code> package to perform Bayesian inference on a model with unknown parameters. The same approach can be used for more complex models and data, and the <code>Turing.jl</code> package provides many advanced features for modeling and inference.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>science</category>
+  <guid>https://ruboerner.github.io/Blog/posts/Bayes/index.html</guid>
+  <pubDate>Thu, 01 Dec 2022 23:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Geophysical inversion</title>
   <dc:creator>Ralph-Uwe Börner</dc:creator>
