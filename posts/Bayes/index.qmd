@@ -2,7 +2,7 @@
 title: "What is Bayesian inference"
 author: "Ralph-Uwe Börner"
 date: "2022-12-02"
-categories: [science]
+categories: [science,chatgpt]
 jupyter: julia-1.8
 ---
 
@@ -45,3 +45,11 @@ In this code, the `@model` block defines the model that we want to fit to the da
 Next, the `sample()` function is used to sample from the posterior distribution of the model using MCMC. This generates a set of samples that approximate the posterior distribution, and the `mean()` function is used to estimate the mean values of x and y from the samples.
 
 This simple example shows how to use the `Turing.jl` package to perform Bayesian inference on a model with unknown parameters. The same approach can be used for more complex models and data, and the `Turing.jl` package provides many advanced features for modeling and inference.
+
+::: callout-note
+## Note
+
+This text has entirely been created by ChatGPT, a Large Language Model developed by openai.com.
+
+Try it out at [chat.openai.com](https://chat.openai.com).
+:::
