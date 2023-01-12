@@ -1,0 +1,22 @@
+---
+title: "2022 annual emission of CO₂"
+author: "Ralph-Uwe Börner"
+date: "2023-01-12"
+categories: [science]
+---
+
+According to the World Economic Forum, global CO₂ emissions from fossil fuels hits a record high in 2022 ([link](https://www.weforum.org/agenda/2022/11/global-co2-emissions-fossil-fuels-hit-record-2022/)).
+
+The fossil fuel based emissions in 2022 are estimated to remain at a high level of about 36.6 Gt/a.
+
+To put the numbers into perspective, David Ho has proposed a time machine which takes us back a certain amount of time relativ to the annual CO₂ emission.
+
+What does CCS (Carbon Capture and Storage) can contribute?
+
+The [Global CCS Institute](https://www.globalccsinstitute.com/resources/global-status-of-ccs-2022/) reports a 44% increase of all CCS facilities under development with a projected total of 244 Mt/a. However, only 30 facilities were in operation and were able to capture 42.58 Mt/a.
+
+Using David's time machine idea, this is equivalent to about **9.2 hours** of the annual CO₂ emission.
+
+If all projected facilities were in operation, these 244 Mt/a would equal **2.2 days** of annual emissions.
+
+{{< mastodon "https://mastodon.world/@davidho/109511745525784891" >}}
