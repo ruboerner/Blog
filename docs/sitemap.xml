@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ruboerner.github.io/Blog/about.html</loc>
-    <lastmod>2022-11-24T08:42:27.520Z</lastmod>
+    <lastmod>2023-01-12T10:03:22.571Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/index.html</loc>
-    <lastmod>2023-01-12T10:01:25.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/coordinates/index.html</loc>
-    <lastmod>2022-11-24T08:42:31.155Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</loc>
-    <lastmod>2022-11-24T08:42:46.256Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</loc>
-    <lastmod>2022-11-24T08:42:33.475Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/jupyter/index.html</loc>
-    <lastmod>2022-11-24T08:42:34.015Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</loc>
-    <lastmod>2022-11-24T08:42:34.832Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/welcome/index.html</loc>
-    <lastmod>2022-11-24T08:42:35.634Z</lastmod>
+    <lastmod>2023-01-12T10:03:26.086Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/Bayes/index.html</loc>
-    <lastmod>2022-12-02T07:52:06.578Z</lastmod>
+    <lastmod>2023-01-12T10:03:26.903Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/coordinates/index.html</loc>
+    <lastmod>2023-01-12T10:03:28.070Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/CO₂/index.html</loc>
-    <lastmod>2023-01-12T10:01:24.887Z</lastmod>
+    <lastmod>2023-01-12T10:03:28.497Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</loc>
+    <lastmod>2023-01-12T10:03:30.250Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</loc>
+    <lastmod>2023-01-12T10:03:30.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/jupyter/index.html</loc>
+    <lastmod>2023-01-12T10:03:31.341Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</loc>
+    <lastmod>2023-01-12T10:03:32.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/welcome/index.html</loc>
+    <lastmod>2023-01-12T10:03:32.912Z</lastmod>
   </url>
 </urlset>
