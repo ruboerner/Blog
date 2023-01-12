@@ -15,8 +15,8 @@ What is CCS (Carbon Capture and Storage) able to contribute?
 
 The [Global CCS Institute](https://www.globalccsinstitute.com/resources/global-status-of-ccs-2022/) reports a 44% increase of all CCS facilities under development with a projected total of 244 Mt/a. However, only 30 facilities were in operation and were able to capture 42.58 Mt/a.
 
-Using David's time machine idea, this is equivalent to about **9.2 hours** of the annual CO₂ emission.
+Using David's time machine idea, this is equivalent to about **10 hours** of the annual CO₂ emission.
 
-If all projected facilities were in operation, these 244 Mt/a would equal **2.2 days** of annual emissions.
+If all projected facilities were in operation, these 244 Mt/a would equal **2.4 days** of annual emissions.
 
 {{< mastodon "https://mastodon.world/@davidho/109511745525784891" >}}
