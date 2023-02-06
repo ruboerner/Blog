@@ -19,4 +19,4 @@ Using David's time machine idea, this is equivalent to about **10 hours** of the
 
 If all projected facilities were in operation, these 244 Mt/a would equal **2.4 days** of annual emissions.
 
-{{< mastodon "https://mastodon.world/@davidho/109511745525784891" >}}
+{{< mastodon "https://mastodon.world/" >}}
