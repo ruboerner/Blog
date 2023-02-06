@@ -10,7 +10,7 @@ Also, this tutorial serves as an opportunity to become familiar with the `Julia`
 
 Our goal is to get as close as possible to the visual appearance of the famous warming stripes.
 
-We will use `Julia` to access and visualize annual air temperature data for Germany provided by [Deutscher Wetterdienst](http://opendata.dwd.de).
+We will use `Julia` to access and visualize annual air temperature data for Germany provided by [The D eutscher Wetterdienst](http://opendata.dwd.de).
 
 First, some packages for data handling, processing and visualization have to be loaded.
 
@@ -93,7 +93,7 @@ There is no doubt that the average temperature relative to the baseline data is 
 
 ```{julia}
 set_theme!(theme_black())
-fig = Figure(resolution = (1000, 540), fonts = (; regular= "sans"))
+fig = Figure(resolution = (1200, 720), fontsize=24, fonts = (; regular= "sans"))
 ax = Axis(fig[1, 1], 
     title = "Temperature change in Germany relative to average of 1970-2001",
     ylabel = "K",
@@ -107,12 +107,12 @@ barplot!(ax, df.Jahr, data; width=1, gap=0,
 lines!(ax, df.Jahr, m_data, color=:white)
 text!("Data source: http://opendata.dwd.de\n" * 
     "https://showyourstripes.info by Ed Hawkins, University of Reading, UK", 
-    fontsize=10,
+    textsize=10,
     align=(:left, :center),
     position = (1880, -1.84))
 text!("The white curve indicates a running average\n" *
     "with a window length of 30 years.",
-    fontsize = 10,
+    textsize = 10,
     align=(:left, :center),
     position=(1990, -1.84))
 fig

@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie.html</loc>
-    <lastmod>2023-02-06T11:32:41.052Z</lastmod>
+    <loc>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</loc>
+    <lastmod>2023-02-06T11:47:28.936Z</lastmod>
   </url>
   <url>
-    <loc>https://ruboerner.github.io/Blog/index.html</loc>
-    <lastmod>2023-02-06T11:32:39.740Z</lastmod>
+    <loc>https://ruboerner.github.io/Blog/posts/coordinates/index.html</loc>
+    <lastmod>2023-02-06T11:47:30.247Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/CO₂/index.html</loc>
-    <lastmod>2023-02-06T11:32:38.600Z</lastmod>
+    <lastmod>2023-02-06T11:47:30.544Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/Bayes/index.html</loc>
+    <lastmod>2023-02-06T11:47:31.452Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/welcome/index.html</loc>
-    <lastmod>2023-02-06T11:32:39.298Z</lastmod>
+    <lastmod>2023-02-06T11:47:32.072Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie.html</loc>
+    <lastmod>2023-02-06T11:55:41.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</loc>
+    <lastmod>2023-02-06T11:47:34.526Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</loc>
+    <lastmod>2023-02-06T11:47:34.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/jupyter/index.html</loc>
+    <lastmod>2023-02-06T11:47:35.121Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/index.html</loc>
+    <lastmod>2023-02-06T11:55:41.700Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/about.html</loc>
+    <lastmod>2023-02-06T11:47:35.879Z</lastmod>
   </url>
 </urlset>
