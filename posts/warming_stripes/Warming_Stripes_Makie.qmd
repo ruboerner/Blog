@@ -1,5 +1,6 @@
 ---
 jupyter: julia-1.8
+categories: [code, julia, climate]
 ---
 
 # Tutorial: How to generate your own warming stripes using `Julia`
