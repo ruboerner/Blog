@@ -505,7 +505,7 @@ jupyter: "julia-1.8"
 <p>In this quick tutorial we learn how to create warming stripes similar to those available at <a href="https://showyourstripes.info">showyourstripes.info</a>.</p>
 <p>Also, this tutorial serves as an opportunity to become familiar with the <code>Julia</code> programming language and some of its packages.</p>
 <p>Our goal is to get as close as possible to the visual appearance of the famous warming stripes.</p>
-<p>We will use <code>Julia</code> to access and visualize annual air temperature data for Germany provided by <a href="http://opendata.dwd.de">The D eutscher Wetterdienst</a>.</p>
+<p>We will use <code>Julia</code> to access and visualize annual air temperature data for Germany provided by the German Meteorological Service <a href="http://opendata.dwd.de">The Deutscher Wetterdienst</a>.</p>
 <p>First, some packages for data handling, processing and visualization have to be loaded.</p>
 <p>We will download a large CSV file from the web. To this end, we need the packages <code>CSV</code> and <code>Downloads</code>. Further, we store the data in some kind of a database provided by <code>DataFrames</code>.</p>
 <p>For the processing of the data we need some statistical quantities from the standard <code>Statistics</code> package.</p>
@@ -535,7 +535,7 @@ jupyter: "julia-1.8"
 <span id="cb2-6">        <span class="st" style="color: #20794D;">"#ef3b2c"</span>, <span class="st" style="color: #20794D;">"#cb181d"</span>, <span class="st" style="color: #20794D;">"#a50f15"</span>, <span class="st" style="color: #20794D;">"#67000d"</span>],</span>
 <span id="cb2-7">    categorical<span class="op" style="color: #5E5E5E;">=</span><span class="cn" style="color: #8f5902;">true</span>);</span>
 <span id="cb2-8">wstripesmap</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="117">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-3-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -598,7 +598,7 @@ jupyter: "julia-1.8"
 <span id="cb5-22">    align<span class="op" style="color: #5E5E5E;">=</span>(<span class="op" style="color: #5E5E5E;">:</span>left, <span class="op" style="color: #5E5E5E;">:</span>center),</span>
 <span id="cb5-23">    position<span class="op" style="color: #5E5E5E;">=</span>(<span class="fl" style="color: #AD0000;">1990</span>, <span class="op" style="color: #5E5E5E;">-</span><span class="fl" style="color: #AD0000;">1.84</span>))</span>
 <span id="cb5-24">fig</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="120">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-6-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -628,7 +628,7 @@ jupyter: "julia-1.8"
 <span id="cb6-22">    colorrange <span class="op" style="color: #5E5E5E;">=</span> (<span class="op" style="color: #5E5E5E;">-</span><span class="fl" style="color: #AD0000;">2.6</span> <span class="op" style="color: #5E5E5E;">*</span> sd, <span class="op" style="color: #5E5E5E;">+</span><span class="fl" style="color: #AD0000;">2.6</span> <span class="op" style="color: #5E5E5E;">*</span> sd), </span>
 <span id="cb6-23">    colormap <span class="op" style="color: #5E5E5E;">=</span> wstripesmap)</span>
 <span id="cb6-24">fig</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="121">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-7-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -642,7 +642,7 @@ jupyter: "julia-1.8"
   <category>julia</category>
   <category>climate</category>
   <guid>https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie.html</guid>
-  <pubDate>Mon, 06 Feb 2023 11:58:16 GMT</pubDate>
+  <pubDate>Mon, 06 Feb 2023 12:02:51 GMT</pubDate>
 </item>
 </channel>
 </rss>

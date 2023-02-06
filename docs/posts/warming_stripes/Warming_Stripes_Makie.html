@@ -187,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this quick tutorial we learn how to create warming stripes similar to those available at <a href="https://showyourstripes.info">showyourstripes.info</a>.</p>
 <p>Also, this tutorial serves as an opportunity to become familiar with the <code>Julia</code> programming language and some of its packages.</p>
 <p>Our goal is to get as close as possible to the visual appearance of the famous warming stripes.</p>
-<p>We will use <code>Julia</code> to access and visualize annual air temperature data for Germany provided by <a href="http://opendata.dwd.de">The D eutscher Wetterdienst</a>.</p>
+<p>We will use <code>Julia</code> to access and visualize annual air temperature data for Germany provided by the German Meteorological Service <a href="http://opendata.dwd.de">The Deutscher Wetterdienst</a>.</p>
 <p>First, some packages for data handling, processing and visualization have to be loaded.</p>
 <p>We will download a large CSV file from the web. To this end, we need the packages <code>CSV</code> and <code>Downloads</code>. Further, we store the data in some kind of a database provided by <code>DataFrames</code>.</p>
 <p>For the processing of the data we need some statistical quantities from the standard <code>Statistics</code> package.</p>
@@ -217,7 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"#ef3b2c"</span>, <span class="st">"#cb181d"</span>, <span class="st">"#a50f15"</span>, <span class="st">"#67000d"</span>],</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    categorical<span class="op">=</span><span class="cn">true</span>);</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>wstripesmap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="117">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <p><img src="Warming_Stripes_Makie_files/figure-html/cell-3-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -280,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    align<span class="op">=</span>(<span class="op">:</span>left, <span class="op">:</span>center),</span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    position<span class="op">=</span>(<span class="fl">1990</span>, <span class="op">-</span><span class="fl">1.84</span>))</span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>fig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="120">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <p><img src="Warming_Stripes_Makie_files/figure-html/cell-6-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -310,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    colorrange <span class="op">=</span> (<span class="op">-</span><span class="fl">2.6</span> <span class="op">*</span> sd, <span class="op">+</span><span class="fl">2.6</span> <span class="op">*</span> sd), </span>
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    colormap <span class="op">=</span> wstripesmap)</span>
 <span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>fig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="121">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <p><img src="Warming_Stripes_Makie_files/figure-html/cell-7-output-1.svg" class="img-fluid"></p>
 </div>
 </div>

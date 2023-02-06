@@ -11,7 +11,7 @@ Also, this tutorial serves as an opportunity to become familiar with the `Julia`
 
 Our goal is to get as close as possible to the visual appearance of the famous warming stripes.
 
-We will use `Julia` to access and visualize annual air temperature data for Germany provided by [The D eutscher Wetterdienst](http://opendata.dwd.de).
+We will use `Julia` to access and visualize annual air temperature data for Germany provided by the German Meteorological Service [The Deutscher Wetterdienst](http://opendata.dwd.de).
 
 First, some packages for data handling, processing and visualization have to be loaded.
 
