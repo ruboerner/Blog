@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ralph-Uwe Börner">
-<meta name="dcterms.date" content="2022-11-24">
+<meta name="dcterms.date" content="2023-11-09">
 
-<title>My Blog - How to locate a piped stream</title>
+<title>My Blog - Mac OS: System-wide PATHs for GUI apps</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,11 +124,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">How to locate a piped stream</h1>
+      <h1 class="title">Mac OS: System-wide PATHs for GUI apps</h1>
                                 <div class="quarto-categories">
+                <div class="quarto-category">news</div>
                 <div class="quarto-category">code</div>
-                <div class="quarto-category">python</div>
-                <div class="quarto-category">geophysics</div>
+                <div class="quarto-category">mac</div>
               </div>
                   </div>
   </div>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 24, 2022</p>
+        <p class="date">November 9, 2023</p>
       </div>
     </div>
     
@@ -165,14 +165,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="problem-setting" class="level2">
-<h2 class="anchored" data-anchor-id="problem-setting">Problem setting</h2>
-<p>In a geophysical field survey, we wanted to locate an underground stream in the urban area of Freiberg.</p>
-<p>The Goldbach, also known as the Saubach, is an approximately 5 km long left tributary of the Münzbach in Freiberg.</p>
-<p>Its entire course is located in the territory of the city of Freiberg. The headwaters are located between the Großer Teich and the Mittelteich ponds or around these ponds in the Freiberg city forest at an altitude of about 460 meters. After passing the Mittelteich, it flows about 300 m to the northwest and then turns almost 90° to the northeast. Parallel to the Ölmühlenweg it reaches the development boundary of the city of Freiberg. Here, at the level of the Schützenhaus on Chemnitzer Straße, it enters a piped section about 400 m long, which ends at the Mühlteich. After flowing through the Mühlteich, after about 200 m it reaches the Hammerteich with the former Freibergsdorfer Hammerwerk, to which it supplied the service water at that time. After another 800 m it is again piped. After flowing through the Kreuzteiche and the Schlüsselteich, it reaches the Münzbach in the Freiberg district of Loßnitz after about 5 km in a piped condition, having meanwhile turned to a more northerly direction.</p>
-</section>
-<section id="geophysical-experiment" class="level2">
-<h2 class="anchored" data-anchor-id="geophysical-experiment">Geophysical experiment</h2>
+<section id="set-system-wide-path-for-mac-os-gui-applications" class="level2">
+<h2 class="anchored" data-anchor-id="set-system-wide-path-for-mac-os-gui-applications">Set system-wide PATH for Mac OS GUI applications</h2>
+<p>Problem: GUI applications often don’t find an app when its directory is already in the PATH environnment variable.</p>
+<p>In my case, I was unable to start <code>jupyter</code> from inside <code>Quarto</code>.</p>
+<p>For recent Mac OS releases, the solution to the problem is easy:</p>
+<p>Edit <code>/etc/paths</code> and add the needed paths. Restart your Finder. That’s it.</p>
 
 
 </section>

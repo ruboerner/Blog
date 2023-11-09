@@ -1,0 +1,15 @@
+---
+title: "Mac OS: System-wide PATHs for GUI apps"
+author: "Ralph-Uwe Börner"
+date: "2023-11-09"
+categories: [news, code, mac]
+---
+## Set system-wide PATH for Mac OS GUI applications
+
+Problem: GUI applications often don't find an app when its directory is already in the PATH environnment variable.
+
+In my case, I was unable to start `jupyter` from inside `Quarto`.
+
+For recent Mac OS releases, the solution to the problem is easy:
+
+Edit `/etc/paths` and add the needed paths. Restart your Finder. That's it.

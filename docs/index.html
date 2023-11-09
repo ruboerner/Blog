@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.466">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,7 +63,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -90,54 +97,57 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="My Blog" href="index.xml"></head>
+<link rel="alternate" type="application/rss+xml" title="My Blog" href="index.xml" data-external="1"></head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">My Blog</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ruboerner"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ruboerner"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/ruboerner"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ruboerner"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://mastodon.social/@ruboerner"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://mastodon.social/@ruboerner"> <i class="bi bi-mastodon" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="./index.xml"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -150,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -163,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="chatgpt">chatgpt <span class="quarto-category-count">(1)</span></div><div class="category" data-category="climate">climate <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(6)</span></div><div class="category" data-category="geophysics">geophysics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="julia">julia <span class="quarto-category-count">(4)</span></div><div class="category" data-category="jupyter">jupyter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="science">science <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="chatgpt">chatgpt <span class="quarto-category-count">(1)</span></div><div class="category" data-category="climate">climate <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(7)</span></div><div class="category" data-category="geophysics">geophysics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="julia">julia <span class="quarto-category-count">(4)</span></div><div class="category" data-category="jupyter">jupyter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mac">mac <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(2)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="science">science <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -174,73 +184,69 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="code,julia,climate" data-listing-file-modified-sort="1675684868452" data-listing-reading-time-sort="4.195">
+<div class="quarto-post image-right" data-index="0" data-categories="news,code,mac" data-listing-date-sort="1699484400000" data-listing-file-modified-sort="1699549377347" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="51">
 <div class="thumbnail">
-<a href="./posts/warming_stripes/Warming_Stripes_Makie.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/warming_stripes/Warming_Stripes_Makie.html"></a></p>
+<p><a href="./posts/Paths/index.html"></a></p><a href="./posts/Paths/index.html">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/Paths/index.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/warming_stripes/Warming_Stripes_Makie.html">
 <h3 class="no-anchor listing-title">
-Tutorial: How to generate your own warming stripes using <code>Julia</code>
+<a href="./posts/Paths/index.html">Mac OS: System-wide PATHs for GUI apps</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/Paths/index.html"></a>
 </div>
-</a>
 <div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+news
+</div>
 <div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
 code
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('julia'); return false;">
-julia
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('climate'); return false;">
-climate
+<div class="listing-category" onclick="window.quartoListingCategory('mac'); return false;">
+mac
 </div>
 </div>
-<a href="./posts/warming_stripes/Warming_Stripes_Makie.html">
 <div class="listing-description">
-In this quick tutorial we learn how to create warming stripes similar to those available at showyourstripes.info.
+<a href="./posts/Paths/index.html">Problem: GUI applications often don’t find an app when its directory is already in the PATH environnment variable.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Paths/index.html">
+<div class="listing-date">
+Nov 9, 2023
+</div>
+<div class="listing-author">
+Ralph-Uwe Börner
 </div>
 </a>
 </div>
-<div class="metadata">
-<a href="./posts/warming_stripes/Warming_Stripes_Makie.html"> </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="science" data-listing-date-sort="1673478000000" data-listing-file-modified-sort="1675682976729" data-listing-reading-time-sort="0.71">
+<div class="quarto-post image-right" data-index="1" data-categories="science" data-listing-date-sort="1673478000000" data-listing-file-modified-sort="1675682976729" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="142">
 <div class="thumbnail">
-<a href="./posts/CO₂/index.html">
-<div class="thumbnail-image">
-
-</div>
+<p><a href="./posts/CO₂/index.html"></a></p><a href="./posts/CO₂/index.html">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 </a><p><a href="./posts/CO₂/index.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/CO₂/index.html">
 <h3 class="no-anchor listing-title">
-2022 annual emission of CO₂
+<a href="./posts/CO₂/index.html">2022 annual emission of CO₂</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/CO₂/index.html"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('science'); return false;">
 science
 </div>
 </div>
-<a href="./posts/CO₂/index.html">
 <div class="listing-description">
-According to the World Economic Forum, global CO₂ emissions from fossil fuels hits a record high in 2022 (link).
+<a href="./posts/CO₂/index.html">According to the World Economic Forum, global CO₂ emissions from fossil fuels hits a record high in 2022 (link).</a>
 </div>
-</a>
 </div>
 <div class="metadata">
 <a href="./posts/CO₂/index.html">
@@ -253,23 +259,55 @@ Ralph-Uwe Börner
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="science,chatgpt" data-listing-date-sort="1669935600000" data-listing-file-modified-sort="1675682951712" data-listing-reading-time-sort="2.475">
+<div class="quarto-post image-right" data-index="2" data-categories="code,julia,climate" data-listing-date-sort="1672527600000" data-listing-file-modified-sort="1699548963702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="839">
 <div class="thumbnail">
-<a href="./posts/Bayes/index.html">
-<div class="thumbnail-image">
-
+<p><a href="./posts/warming_stripes/Warming_Stripes_Makie.html"></a></p><a href="./posts/warming_stripes/Warming_Stripes_Makie.html">
+<p class="card-img-top"><img src="posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-3-output-1.svg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/warming_stripes/Warming_Stripes_Makie.html"></a></p>
 </div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/warming_stripes/Warming_Stripes_Makie.html">Tutorial: How to generate your own warming stripes using <code>Julia</code></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/warming_stripes/Warming_Stripes_Makie.html"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('julia'); return false;">
+julia
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('climate'); return false;">
+climate
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/warming_stripes/Warming_Stripes_Makie.html">In this quick tutorial we learn how to create warming stripes similar to those available at showyourstripes.info.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/warming_stripes/Warming_Stripes_Makie.html">
+<div class="listing-date">
+Jan 1, 2023
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="science,chatgpt" data-listing-date-sort="1669935600000" data-listing-file-modified-sort="1675682951712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="495">
+<div class="thumbnail">
+<p><a href="./posts/Bayes/index.html"></a></p><a href="./posts/Bayes/index.html">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 </a><p><a href="./posts/Bayes/index.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/Bayes/index.html">
 <h3 class="no-anchor listing-title">
-What is Bayesian inference
+<a href="./posts/Bayes/index.html">What is Bayesian inference</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/Bayes/index.html"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('science'); return false;">
 science
@@ -278,11 +316,9 @@ science
 chatgpt
 </div>
 </div>
-<a href="./posts/Bayes/index.html">
 <div class="listing-description">
-Bayesian inference is a mathematical method for estimating the values of unknown parameters based on observed data…
+<a href="./posts/Bayes/index.html">Bayesian inference is a mathematical method for estimating the values of unknown parameters based on observed data and prior knowledge or beliefs about the parameters. It is…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
 <a href="./posts/Bayes/index.html">
@@ -295,23 +331,19 @@ Ralph-Uwe Börner
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="code,python,geophysics" data-listing-date-sort="1669244400000" data-listing-file-modified-sort="1669716844583" data-listing-reading-time-sort="5.18">
+<div class="quarto-post image-right" data-index="4" data-categories="code,python,geophysics" data-listing-date-sort="1669244400000" data-listing-file-modified-sort="1669716844583" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1036">
 <div class="thumbnail">
-<a href="./posts/DC_in_the_park/pygimli_inversion.html">
-<div class="thumbnail-image">
-
-</div>
+<p><a href="./posts/DC_in_the_park/pygimli_inversion.html"></a></p><a href="./posts/DC_in_the_park/pygimli_inversion.html">
+<p class="card-img-top"><img src="posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-9-output-1.png"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/DC_in_the_park/pygimli_inversion.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/DC_in_the_park/pygimli_inversion.html">
 <h3 class="no-anchor listing-title">
-Geophysical inversion
+<a href="./posts/DC_in_the_park/pygimli_inversion.html">Geophysical inversion</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/DC_in_the_park/pygimli_inversion.html"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
 code
@@ -323,11 +355,9 @@ python
 geophysics
 </div>
 </div>
-<a href="./posts/DC_in_the_park/pygimli_inversion.html">
 <div class="listing-description">
-The aim of the inversion is to reconstruct the spatial distribution of resistivity in the subsurface. This is based on the measured data, usually ohmic resistances <span class="math inline">\(R(L)\)</span>…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span>
+<a href="./posts/DC_in_the_park/pygimli_inversion.html">The aim of the inversion is to reconstruct the spatial distribution of resistivity in the subsurface. This is based on the measured data, usually ohmic resistances <span class="math inline">\(R(L)\)</span> i…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span></a>
 </div>
-</a>
 </div>
 <div class="metadata">
 <a href="./posts/DC_in_the_park/pygimli_inversion.html">
@@ -340,23 +370,19 @@ Ralph-Uwe Börner
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="code,julia" data-listing-date-sort="1666735200000" data-listing-file-modified-sort="1673102598054" data-listing-reading-time-sort="0.97">
+<div class="quarto-post image-right" data-index="5" data-categories="code,julia" data-listing-date-sort="1666735200000" data-listing-file-modified-sort="1673102598054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="194">
 <div class="thumbnail">
-<a href="./posts/coordinates/index.html">
-<div class="thumbnail-image">
-
-</div>
+<p><a href="./posts/coordinates/index.html"></a></p><a href="./posts/coordinates/index.html">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 </a><p><a href="./posts/coordinates/index.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/coordinates/index.html">
 <h3 class="no-anchor listing-title">
-Geodetic coordinate transforms with Julia
+<a href="./posts/coordinates/index.html">Geodetic coordinate transforms with Julia</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/coordinates/index.html"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
 code
@@ -365,11 +391,9 @@ code
 julia
 </div>
 </div>
-<a href="./posts/coordinates/index.html">
 <div class="listing-description">
-This blog post is about geodetic coordinate transforms using the <code>Julia</code> programming language.
+<a href="./posts/coordinates/index.html">This blog post is about geodetic coordinate transforms using the <code>Julia</code> programming language.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
 <a href="./posts/coordinates/index.html">
@@ -382,23 +406,19 @@ Ralph-Uwe Börner
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="news,code,julia" data-listing-date-sort="1664488800000" data-listing-file-modified-sort="1666785914219" data-listing-reading-time-sort="0.07">
+<div class="quarto-post image-right" data-index="6" data-categories="news,code,julia" data-listing-date-sort="1664488800000" data-listing-file-modified-sort="1666785914219" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
 <div class="thumbnail">
-<a href="./posts/post-with-code/index.html">
-<div class="thumbnail-image">
-
-</div>
+<p><a href="./posts/post-with-code/index.html"></a></p><a href="./posts/post-with-code/index.html">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 </a><p><a href="./posts/post-with-code/index.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/post-with-code/index.html">
 <h3 class="no-anchor listing-title">
-Post With Code
+<a href="./posts/post-with-code/index.html">Post With Code</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/post-with-code/index.html"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
 news
@@ -410,11 +430,9 @@ code
 julia
 </div>
 </div>
-<a href="./posts/post-with-code/index.html">
 <div class="listing-description">
-This is a post with executable code.
+<a href="./posts/post-with-code/index.html">This is a post with executable code.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
 <a href="./posts/post-with-code/index.html">
@@ -427,29 +445,27 @@ Ralph-Uwe Börner
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="quarto" data-listing-date-sort="1664488800000" data-listing-file-modified-sort="1666785914219" data-listing-reading-time-sort="0.395">
+<div class="quarto-post image-right" data-index="7" data-categories="quarto" data-listing-date-sort="1664488800000" data-listing-file-modified-sort="1666785914219" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="79">
 <div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/quarto.png" class="thumnail-image"> </a></p>
+<p><a href="./posts/welcome/index.html"></a></p><a href="./posts/welcome/index.html">
+<p><img src="./posts/welcome/quarto.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/welcome/index.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/welcome/index.html">
 <h3 class="no-anchor listing-title">
-Welcome to my Blog
+<a href="./posts/welcome/index.html">Welcome to my Blog</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/welcome/index.html"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
 quarto
 </div>
 </div>
-<a href="./posts/welcome/index.html">
 <div class="listing-description">
-This is the first post in a Quarto blog.
+<a href="./posts/welcome/index.html">This is the first post in a Quarto blog.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
 <a href="./posts/welcome/index.html">
@@ -462,19 +478,19 @@ Ralph-Uwe Börner
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="code,julia" data-listing-date-sort="1664488800000" data-listing-file-modified-sort="1666785914216" data-listing-reading-time-sort="0.8">
+<div class="quarto-post image-right" data-index="8" data-categories="code,julia" data-listing-date-sort="1664488800000" data-listing-file-modified-sort="1666785914216" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="160">
 <div class="thumbnail">
-<p><a href="./posts/Julia-and-Quarto/index.html"> <img src="./posts/Julia-and-Quarto/Logo.png" class="thumnail-image"> </a></p>
+<p><a href="./posts/Julia-and-Quarto/index.html"></a></p><a href="./posts/Julia-and-Quarto/index.html">
+<p><img src="./posts/Julia-and-Quarto/Logo.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/Julia-and-Quarto/index.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/Julia-and-Quarto/index.html">
 <h3 class="no-anchor listing-title">
-Quarto and Julia
+<a href="./posts/Julia-and-Quarto/index.html">Quarto and Julia</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/Julia-and-Quarto/index.html"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
 code
@@ -483,11 +499,9 @@ code
 julia
 </div>
 </div>
-<a href="./posts/Julia-and-Quarto/index.html">
 <div class="listing-description">
-There are quite a few development environments available for Julia, e.g., Visual Studio Code, Jupyter, Pluto.jl.
+<a href="./posts/Julia-and-Quarto/index.html">There are quite a few development environments available for Julia, e.g., Visual Studio Code, Jupyter, Pluto.jl.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
 <a href="./posts/Julia-and-Quarto/index.html">
@@ -500,19 +514,19 @@ Ralph-Uwe Börner
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="code,jupyter,quarto" data-listing-date-sort="1664402400000" data-listing-file-modified-sort="1666785914218" data-listing-reading-time-sort="0.54">
+<div class="quarto-post image-right" data-index="9" data-categories="code,jupyter,quarto" data-listing-date-sort="1664402400000" data-listing-file-modified-sort="1666785914218" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
 <div class="thumbnail">
-<p><a href="./posts/jupyter/index.html"> <img src="./posts/jupyter/main-logo.png" class="thumnail-image"> </a></p>
+<p><a href="./posts/jupyter/index.html"></a></p><a href="./posts/jupyter/index.html">
+<p><img src="./posts/jupyter/main-logo.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/jupyter/index.html"></a></p>
 </div>
 <div class="body">
-<a href="./posts/jupyter/index.html">
 <h3 class="no-anchor listing-title">
-Jupyter example
+<a href="./posts/jupyter/index.html">Jupyter example</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/jupyter/index.html"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
 code
@@ -524,11 +538,9 @@ jupyter
 quarto
 </div>
 </div>
-<a href="./posts/jupyter/index.html">
 <div class="listing-description">
-This blog post has been entirely written within a Jupyter Notebook.
+<a href="./posts/jupyter/index.html">This blog post has been entirely written within a Jupyter Notebook.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
 <a href="./posts/jupyter/index.html">
@@ -573,9 +585,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -611,10 +637,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -624,8 +649,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -640,6 +674,241 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -680,6 +949,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

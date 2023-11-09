@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</loc>
-    <lastmod>2023-02-06T11:47:28.936Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/coordinates/index.html</loc>
-    <lastmod>2023-02-06T11:47:30.247Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/CO₂/index.html</loc>
-    <lastmod>2023-02-06T11:47:30.544Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/Bayes/index.html</loc>
-    <lastmod>2023-02-06T11:47:31.452Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/welcome/index.html</loc>
-    <lastmod>2023-02-06T11:47:32.072Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie.html</loc>
-    <lastmod>2023-02-06T12:02:53.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</loc>
-    <lastmod>2023-02-06T11:47:34.526Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</loc>
-    <lastmod>2023-02-06T11:47:34.809Z</lastmod>
+    <loc>https://ruboerner.github.io/Blog/about.html</loc>
+    <lastmod>2022-11-29T10:14:04.570Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/jupyter/index.html</loc>
-    <lastmod>2023-02-06T11:47:35.121Z</lastmod>
+    <lastmod>2022-10-26T12:05:14.218Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</loc>
+    <lastmod>2022-11-29T10:14:04.583Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie.html</loc>
+    <lastmod>2023-11-09T16:56:03.702Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/Bayes/index.html</loc>
+    <lastmod>2023-02-06T11:29:11.712Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/CO₂/index.html</loc>
+    <lastmod>2023-02-06T11:29:36.729Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</loc>
+    <lastmod>2022-10-26T12:05:14.219Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/coordinates/index.html</loc>
+    <lastmod>2023-01-07T14:43:18.054Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/Paths/index.html</loc>
+    <lastmod>2023-11-09T17:02:57.347Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/welcome/index.html</loc>
+    <lastmod>2022-10-26T12:05:14.219Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</loc>
+    <lastmod>2022-10-26T12:05:14.216Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/index.html</loc>
-    <lastmod>2023-02-06T12:02:51.313Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/about.html</loc>
-    <lastmod>2023-02-06T11:47:35.879Z</lastmod>
+    <lastmod>2022-10-26T12:05:14.215Z</lastmod>
   </url>
 </urlset>
