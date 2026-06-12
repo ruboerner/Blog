@@ -4,9 +4,6 @@ image: avatar_rub.jpg
 about:
   template: solana
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/ruboerner
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/ralph-uwe-b%C3%B6rner-ab36472b
@@ -29,4 +26,4 @@ My research interests are:
 -   Potential theory and its applications in geophysics
 -   Numerical simulation of Maxwell's equations
 -   Finite Elements
--   MATLAB and Julia
+-   Python and Julia

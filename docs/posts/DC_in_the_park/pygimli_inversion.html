@@ -239,29 +239,26 @@ window.Quarto = {
 <p>The aim of the inversion is to reconstruct the spatial distribution of resistivity in the subsurface. This is based on the measured data, usually ohmic resistances <span class="math inline">\(R(L)\)</span> in <span class="math inline">\(\Omega\)</span> or apparent resistivities <span class="math inline">\(\rho_s(L)\)</span> in <span class="math inline">\(\Omega\cdot m\)</span>. All measured values depend on the location and the geoelectric electrode configuration (denoted here by <span class="math inline">\(L\)</span>).</p>
 <section id="installation" class="level3">
 <h3 class="anchored" data-anchor-id="installation">Installation</h3>
-<p>The <code>pyGIMLi</code> is a Python library. We assume that a Python environment is already installed. The easiest option is <a href="https://www.anaconda.com/products/individual"><em>anaconda</em></a>.</p>
+<p>The <code>pyGIMLi</code> is a Python library. We assume that a Python environment is already installed. The easiest option is <a href="https://www.anaconda.com/docs/getting-started/miniconda/main"><em>miniconda</em></a>.</p>
 <p>First, <code>pyGIMLi</code> must be installed so that it can be accessed under Python. This is done with <code>conda</code>:</p>
-<pre class="shell"><code>conda install -c gimli -c conda-forge pygimli=1.3.0</code></pre>
+<pre class="shell"><code>pip install pygimli</code></pre>
 </section>
 <section id="preparation" class="level3">
 <h3 class="anchored" data-anchor-id="preparation">Preparation</h3>
 <p>We import the two libraries <code>pygimli</code> and <code>numpy</code>.</p>
-<div class="cell" data-execution_count="1">
+<div id="9d6903e4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell" data-execution_count="2">
+<div id="dbbd1c9c" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pygimli <span class="im">as</span> pg</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pygimli.physics <span class="im">import</span> ert</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pygimli.physics.ert <span class="im">import</span> ERTManager</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell" data-execution_count="3">
+<div id="6ae23a7f" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pg.__version__)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1.2.6</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code></code></pre>
+<pre><code>1.6.0</code></pre>
 </div>
 </div>
 </section>
@@ -300,28 +297,28 @@ window.Quarto = {
 <p>The profile measurement was carried out with the <em>Wenner</em>, and <em>Dipole-Dipole</em> configurations using 21 electrodes.</p>
 <p>The dipole-dipole data set consists of 80 individual measurements, and the Wenner data set consists of 63 individual measurements. All data is stored in the file <code>parkall.mea</code>.</p>
 <p>The Python object <code>wenner</code> contains all measured data:</p>
-<div class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wenner <span class="op">=</span> pg.load(<span class="st">"parkall.mea"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(wenner)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a716a93d" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wenner <span class="op">=</span> pg.load(<span class="st">"parkall.mea"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(wenner)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: Sensors: 21 data: 143, nonzero entries: ['a', 'b', 'm', 'n', 'rhoa', 'valid']</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>wenner[<span class="st">'k'</span>] <span class="op">=</span> ert.createGeometricFactors(wenner, numerical<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="73c4faa7" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wenner[<span class="st">'k'</span>] <span class="op">=</span> ert.createGeometricFactors(wenner, numerical<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In the <code>pyGIMLi</code> method <code>ERTManager()</code> all functions for the inversion of geoelectric data (<em>Electrical Resistivity Tomography</em>, ERT) are implemented.</p>
 <p>The object <code>ertwenner</code> will hold, among others, the model response and the model parameters.</p>
-<div class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ertwenner <span class="op">=</span> ERTManager()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="15afbc1a" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ertwenner <span class="op">=</span> ERTManager()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Since our data set does not contain measurement errors, we estimate plausible absolute and relative data errors. Absolute errors are given in <span class="math inline">\(\Omega\cdot m\)</span>.</p>
-<div class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>wenner[<span class="st">'err'</span>] <span class="op">=</span> ertwenner.estimateError(wenner, absoluteError<span class="op">=</span><span class="fl">0.1</span>, relativeError<span class="op">=</span><span class="fl">0.03</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ead0f194" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wenner[<span class="st">'err'</span>] <span class="op">=</span> ertwenner.estimateError(wenner, absoluteError<span class="op">=</span><span class="fl">0.1</span>, relativeError<span class="op">=</span><span class="fl">0.03</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The following figure shows <em>pseudosections</em> of the <strong>apparent resistivity</strong> <span class="math inline">\(\rho_s\)</span>. The trapezoidal shape comes from the arbitrary choice of the horizontal reference point in the profile plot for the Wenner or dipole-dipole arrangement. The ordinates in the following two figures represent the electrode spacing for Wenner (WE) and the separation between current pole and voltage dipoles for the dipole-dipole (DD) array. <strong>Note: The vertical axis is not a depth axis!</strong></p>
-<div class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ertwenner.showData(wenner, cMap<span class="op">=</span><span class="st">"RdBu_r"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5a02a071" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ertwenner.showData(wenner, cMap<span class="op">=</span><span class="st">"RdBu_r"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -338,39 +335,39 @@ window.Quarto = {
 <p>The <code>lam</code> parameter is assigned the value of the selected <em>regularization parameter</em> <span class="math inline">\(\lambda\)</span>.</p>
 <p>If the value of <span class="math inline">\(\lambda\)</span> is too low, a singularity of the least squares problem, if present, is expressed by strongly fluctuating values in the resistivity distribution in the subsurface. In the opposite case, if <span class="math inline">\(\lambda\)</span> is too large, the resistivity distribution becomes very smooth.</p>
 <p>Here we can try out what influence the regularization parameter has on the solution of our problem.</p>
-<div class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="dv">10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="bc2462df" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="dv">10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>modwenner <span class="op">=</span> ertwenner.invert(wenner, lam<span class="op">=</span>lam, paraMaxCellSize<span class="op">=</span><span class="fl">0.1</span>, paraDepth<span class="op">=</span><span class="dv">6</span>, verbose<span class="op">=</span><span class="va">False</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e2963a9c" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>modwenner <span class="op">=</span> ertwenner.invert(wenner, lam<span class="op">=</span>lam, paraMaxCellSize<span class="op">=</span><span class="fl">0.1</span>, paraDepth<span class="op">=</span><span class="dv">6</span>, verbose<span class="op">=</span><span class="va">False</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The following figures illustrate the relationship between the model parameters (<span class="math inline">\(\rho(\mathbf r)\)</span>) and the measured apparent resistivity (<code>Data</code>) and the model response (<code>Response</code>).</p>
-<div class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ertwenner.showResultAndFit(cMap<span class="op">=</span><span class="st">"RdBu_r"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="0d9ddc61" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ertwenner.showResultAndFit(cMap<span class="op">=</span><span class="st">"RdBu_r"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pygimli_inversion_files/figure-html/cell-12-output-1.png" width="659" height="469" class="figure-img"></p>
+<p><img src="pygimli_inversion_files/figure-html/cell-12-output-1.png" width="1042" height="565" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The Goldbach flows in a concrete pipe at about profile meter 12.</p>
-<div class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ertwenner.showModel(modwenner, cMap<span class="op">=</span><span class="st">"RdBu_r"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="271af637" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ertwenner.showModel(modwenner, cMap<span class="op">=</span><span class="st">"RdBu_r"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pygimli_inversion_files/figure-html/cell-13-output-1.png" width="586" height="264" class="figure-img"></p>
+<p><img src="pygimli_inversion_files/figure-html/cell-13-output-1.png" width="661" height="281" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Of interest is the goodness of fit, which we refer to as <em>misfit</em>. This is the relative error between data and model response. A graphical representation of this error is informative:</p>
-<div class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>misfitwe <span class="op">=</span> ertwenner.inv.response <span class="op">/</span> wenner[<span class="st">'rhoa'</span>] <span class="op">*</span> <span class="dv">100</span> <span class="op">-</span> <span class="dv">100</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>me <span class="op">=</span> np.<span class="bu">max</span>(np.<span class="bu">abs</span>(misfitwe))</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>pg.show(wenner, misfitwe, cMap<span class="op">=</span><span class="st">"RdBu_r"</span>, cMin<span class="op">=-</span>me, cMax<span class="op">=</span>me, label<span class="op">=</span><span class="st">"misfit (%)"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="c764c1e9" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>misfitwe <span class="op">=</span> ertwenner.inv.response <span class="op">/</span> wenner[<span class="st">'rhoa'</span>] <span class="op">*</span> <span class="dv">100</span> <span class="op">-</span> <span class="dv">100</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>me <span class="op">=</span> np.<span class="bu">max</span>(np.<span class="bu">abs</span>(misfitwe))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>pg.show(wenner, misfitwe, cMap<span class="op">=</span><span class="st">"RdBu_r"</span>, cMin<span class="op">=-</span>me, cMax<span class="op">=</span>me, label<span class="op">=</span><span class="st">"misfit (%)"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -380,10 +377,10 @@ window.Quarto = {
 </div>
 </div>
 <p>The global misfit is described with the <span class="math inline">\(\chi^2\)</span>-statistic and amounts to</p>
-<div class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ertwenner.inv.chi2()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="172">
-<pre><code>0.8469349648613855</code></pre>
+<div id="c61e7a57" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ertwenner.inv.chi2()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>0.7713143921190786</code></pre>
 </div>
 </div>
 </section>

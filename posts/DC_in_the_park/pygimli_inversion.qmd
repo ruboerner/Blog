@@ -4,6 +4,7 @@ author: "Ralph-Uwe Börner"
 date: "2022-11-24"
 categories: [code, python, geophysics]
 editor: source
+jupyter: pg155
 ---
 
 # Inversion of DC resistivity data with `pyGIMLi`
