@@ -23,5 +23,5 @@ format:
     theme: spacelab
     css: styles.css
 
-editor: visual
+editor: source
 

@@ -3,7 +3,7 @@ title: "Geodetic coordinate transforms with Julia"
 author: "Ralph-Uwe Börner"
 date: "2022-10-26"
 categories: [code, julia]
-jupyter: julia-1.8
+jupyter: julia-1.12
 ---
 
 This blog post is about geodetic coordinate transforms using the `Julia` programming language.

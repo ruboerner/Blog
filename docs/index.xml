@@ -9,7 +9,7 @@
 <link>https://ruboerner.github.io/Blog/</link>
 <atom:link href="https://ruboerner.github.io/Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.4.466</generator>
+<generator>quarto-1.10.8</generator>
 <lastBuildDate>Wed, 08 Nov 2023 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Mac OS: System-wide PATHs for GUI apps</title>
@@ -59,7 +59,7 @@
 <p>The package <code>RollingFunctions</code> provides tools to smooth temporal data using windowed averages.</p>
 <p>Finally, we create a custom colormap and plot the data with the <code>Makie</code> package.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
 background-color: null;
@@ -95,14 +95,14 @@ font-style: inherit;">ColorSchemes</span></span>
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
 background-color: null;
-font-style: inherit;">CairoMakie</span></span></code></pre></div>
+font-style: inherit;">CairoMakie</span></span></code></pre></div></div>
 </div>
 <section id="color-map" class="level3">
 <h3 class="anchored" data-anchor-id="color-map">Color map</h3>
 <p>To get close to the visual style of the warming stripes charts by Ed Hawking, we define a customized colormap.</p>
 <p>The original <a href="https://en.wikipedia.org/wiki/Warming_stripes#/media/File:20180522_Color_palette_for_warming_stripes_-_ColorBrewer_9-class_single_hue.svg">color palette from Wikipedia</a> provides the required color codes for the blue-white-red colormap.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1">wstripesmap <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1">wstripesmap <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -151,9 +151,13 @@ background-color: null;
 font-style: inherit;">=</span><span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">true</span>);</span>
-<span id="cb2-8">wstripesmap</span></code></pre></div>
+<span id="cb2-8">wstripesmap</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-3-output-1.svg" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-3-output-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -161,7 +165,7 @@ font-style: inherit;">true</span>);</span>
 <h2 class="anchored" data-anchor-id="data-access">Data access</h2>
 <p>We load data from a URL and store everything in a database structure known as a <em>DataFrame</em>.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">url <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">url <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -187,7 +191,7 @@ font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">";"</span>) <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">|&gt;</span> DataFrame;</span></code></pre></div>
+font-style: inherit;">|&gt;</span> DataFrame;</span></code></pre></div></div>
 </div>
 </section>
 <section id="baseline-data-and-long-term-statistics" class="level2">
@@ -196,7 +200,7 @@ font-style: inherit;">|&gt;</span> DataFrame;</span></code></pre></div>
 <p>Further, we need the standard deviation of the long-term temperature data from 1901 to 2000.</p>
 <p>A smoothed data set based on a running mean is generated with an averaging window of 30 years length.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1">df_baseline <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1">df_baseline <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -215,6 +219,7 @@ background-color: null;
 font-style: inherit;">2001</span>), df)</span>
 <span id="cb4-2"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">where</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
@@ -224,6 +229,7 @@ font-style: inherit;">"Deutschland"</span></span>
 background-color: null;
 font-style: inherit;">=</span> df_baseline[!, <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">where</span>];</span>
 <span id="cb4-4">mw <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -252,6 +258,7 @@ font-style: inherit;">2001</span>), df)</span>
 background-color: null;
 font-style: inherit;">=</span> df_longterm[!, <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">where</span>];</span>
 <span id="cb4-8">sd <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -263,6 +270,7 @@ font-style: inherit;">std</span>(col)</span>
 background-color: null;
 font-style: inherit;">=</span> df[!, <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">where</span>] <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">.-</span> mw;</span>
@@ -272,7 +280,7 @@ font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">runmean</span>(data, <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">30</span>);</span></code></pre></div>
+font-style: inherit;">30</span>);</span></code></pre></div></div>
 </div>
 </section>
 <section id="visualization" class="level2">
@@ -281,7 +289,7 @@ font-style: inherit;">30</span>);</span></code></pre></div>
 <p>We add as white line the smoothed temperature obtained by calculating running averages with a time window of 30 years length.</p>
 <p>There is no doubt that the average temperature relative to the baseline data is approaching far more than 1.5 K (or 1.5 °C as it is commonly communicated) for the recent two decades since year 2000.</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">set_theme!</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -454,14 +462,18 @@ background-color: null;
 font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1.84</span>))</span>
-<span id="cb5-24">fig</span></code></pre></div>
+<span id="cb5-24">fig</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-6-output-1.svg" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-6-output-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The next cell generates the well-known warming stripes for Germany.</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">set_theme!</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -600,9 +612,13 @@ font-style: inherit;">*</span> sd), </span>
 <span id="cb6-23">    colormap <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> wstripesmap)</span>
-<span id="cb6-24">fig</span></code></pre></div>
+<span id="cb6-24">fig</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-7-output-1.svg" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie_files/figure-html/cell-7-output-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -644,134 +660,6 @@ font-style: inherit;">=</span> wstripesmap)</span>
   <pubDate>Wed, 11 Jan 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>What is Bayesian inference</title>
-  <dc:creator>Ralph-Uwe Börner</dc:creator>
-  <link>https://ruboerner.github.io/Blog/posts/Bayes/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="what-is-bayesian-inference" class="level1">
-<h1>What is Bayesian inference?</h1>
-<p>Bayesian inference is a mathematical method for estimating the values of unknown parameters based on observed data and prior knowledge or beliefs about the parameters. It is a type of statistical inference that is based on Bayes’ theorem, which is a fundamental result in probability theory.</p>
-<p>The basic idea of Bayesian inference is to use Bayes’ theorem to update our beliefs or knowledge about the values of the unknown parameters based on the observed data. This is done by expressing our prior beliefs about the parameters as a probability distribution, known as the prior distribution. Then, we use Bayes’ theorem to calculate the posterior distribution, which represents our updated beliefs about the parameters based on the observed data.</p>
-<p>Bayesian inference has many advantages over other methods of statistical inference. It allows us to incorporate prior knowledge or beliefs about the parameters into our analysis, which can improve the accuracy of our estimates. It also allows us to easily incorporate uncertainty and incorporate new data as it becomes available. Additionally, Bayesian inference provides a natural framework for modeling complex systems, where the relationships between the variables are often unknown or uncertain.</p>
-<p>Overall, Bayesian inference is a powerful and flexible method for estimating the values of unknown parameters based on observed data and prior knowledge. It is widely used in many fields, including statistics, machine learning, and engineering, and it has many applications in data analysis and decision making.</p>
-<p>Here is an example of Julia code that uses the <code>Turing.jl</code> package to perform Bayesian inference on a simple model. This code uses the Monte Carlo Markov Chain (MCMC) sampling method to estimate the values of the unknown parameters.</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">using</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Turing</span></span>
-<span id="cb1-2"></span>
-<span id="cb1-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Define the model</span></span>
-<span id="cb1-4"><span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">@model</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">begin</span></span>
-<span id="cb1-5">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Define the unknown parameters</span></span>
-<span id="cb1-6">  x <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">Normal</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb1-7">  y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">Normal</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb1-8"></span>
-<span id="cb1-9">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Define the data</span></span>
-<span id="cb1-10">  z <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> x <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> y</span>
-<span id="cb1-11"><span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">end</span></span>
-<span id="cb1-12"></span>
-<span id="cb1-13"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Sample from the posterior distribution using MCMC</span></span>
-<span id="cb1-14">samples <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sample</span>(model, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">MCMC</span>(), <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span>)</span>
-<span id="cb1-15"></span>
-<span id="cb1-16"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Print the estimated values of x and y</span></span>
-<span id="cb1-17"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">println</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Estimated value of x: "</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mean</span>(samples[<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span>x]))</span>
-<span id="cb1-18"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">println</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Estimated value of y: "</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mean</span>(samples[<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span>y]))</span></code></pre></div>
-</div>
-<p>In this code, the <code>@model</code> block defines the model that we want to fit to the data. It specifies that the unknown parameters x and y are normally distributed with mean 0 and standard deviation 1. The z variable is defined as the sum of x and y, which represents the observed data.</p>
-<p>Next, the <code>sample()</code> function is used to sample from the posterior distribution of the model using MCMC. This generates a set of samples that approximate the posterior distribution, and the <code>mean()</code> function is used to estimate the mean values of x and y from the samples.</p>
-<p>This simple example shows how to use the <code>Turing.jl</code> package to perform Bayesian inference on a model with unknown parameters. The same approach can be used for more complex models and data, and the <code>Turing.jl</code> package provides many advanced features for modeling and inference.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This text has entirely been created by ChatGPT, a Large Language Model developed by openai.com.</p>
-<p>Try it out at <a href="https://chat.openai.com">chat.openai.com</a>.</p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>science</category>
-  <category>chatgpt</category>
-  <guid>https://ruboerner.github.io/Blog/posts/Bayes/</guid>
-  <pubDate>Thu, 01 Dec 2022 23:00:00 GMT</pubDate>
-</item>
-<item>
   <title>Geophysical inversion</title>
   <dc:creator>Ralph-Uwe Börner</dc:creator>
   <link>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</link>
@@ -794,12 +682,12 @@ Note
 <h3 class="anchored" data-anchor-id="preparation">Preparation</h3>
 <p>We import the two libraries <code>pygimli</code> and <code>numpy</code>.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">%</span>matplotlib inline</span></code></pre></div>
+font-style: inherit;">%</span>matplotlib inline</span></code></pre></div></div>
 </div>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> pygimli <span class="im" style="color: #00769E;
 background-color: null;
@@ -818,12 +706,12 @@ font-style: inherit;">import</span> ert</span>
 background-color: null;
 font-style: inherit;">from</span> pygimli.physics.ert <span class="im" style="color: #00769E;
 background-color: null;
-font-style: inherit;">import</span> ERTManager</span></code></pre></div>
+font-style: inherit;">import</span> ERTManager</span></code></pre></div></div>
 </div>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="bu" style="color: null;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="bu" style="color: null;
 background-color: null;
-font-style: inherit;">print</span>(pg.__version__)</span></code></pre></div>
+font-style: inherit;">print</span>(pg.__version__)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1.2.6</code></pre>
 </div>
@@ -868,20 +756,20 @@ font-style: inherit;">print</span>(pg.__version__)</span></code></pre></div>
 <p>The dipole-dipole data set consists of 80 individual measurements, and the Wenner data set consists of 63 individual measurements. All data is stored in the file <code>parkall.mea</code>.</p>
 <p>The Python object <code>wenner</code> contains all measured data:</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">wenner <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">wenner <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pg.load(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"parkall.mea"</span>)</span>
 <span id="cb8-2"><span class="bu" style="color: null;
 background-color: null;
-font-style: inherit;">print</span>(wenner)</span></code></pre></div>
+font-style: inherit;">print</span>(wenner)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: Sensors: 21 data: 143, nonzero entries: ['a', 'b', 'm', 'n', 'rhoa', 'valid']</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">wenner[<span class="st" style="color: #20794D;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">wenner[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'k'</span>] <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -889,18 +777,18 @@ font-style: inherit;">=</span> ert.createGeometricFactors(wenner, numerical<span
 background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;">True</span>)</span></code></pre></div>
+font-style: inherit;">True</span>)</span></code></pre></div></div>
 </div>
 <p>In the <code>pyGIMLi</code> method <code>ERTManager()</code> all functions for the inversion of geoelectric data (<em>Electrical Resistivity Tomography</em>, ERT) are implemented.</p>
 <p>The object <code>ertwenner</code> will hold, among others, the model response and the model parameters.</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">ertwenner <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">ertwenner <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> ERTManager()</span></code></pre></div>
+font-style: inherit;">=</span> ERTManager()</span></code></pre></div></div>
 </div>
 <p>Since our data set does not contain measurement errors, we estimate plausible absolute and relative data errors. Absolute errors are given in <img src="https://latex.codecogs.com/png.latex?%5COmega%5Ccdot%20m">.</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">wenner[<span class="st" style="color: #20794D;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">wenner[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'err'</span>] <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -912,19 +800,23 @@ font-style: inherit;">0.1</span>, relativeError<span class="op" style="color: #5
 background-color: null;
 font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0.03</span>)</span></code></pre></div>
+font-style: inherit;">0.03</span>)</span></code></pre></div></div>
 </div>
 <p>The following figure shows <em>pseudosections</em> of the <strong>apparent resistivity</strong> <img src="https://latex.codecogs.com/png.latex?%5Crho_s">. The trapezoidal shape comes from the arbitrary choice of the horizontal reference point in the profile plot for the Wenner or dipole-dipole arrangement. The ordinates in the following two figures represent the electrode spacing for Wenner (WE) and the separation between current pole and voltage dipoles for the dipole-dipole (DD) array. <strong>Note: The vertical axis is not a depth axis!</strong></p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">ertwenner.showData(wenner, cMap<span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">ertwenner.showData(wenner, cMap<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"RdBu_r"</span>)<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
+font-style: inherit;">;</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-9-output-1.png" width="596" height="431"></p>
+<div>
+<figure class="figure">
+<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-9-output-1.png" width="596" height="431" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -936,14 +828,14 @@ font-style: inherit;">;</span></span></code></pre></div>
 <p>If the value of <img src="https://latex.codecogs.com/png.latex?%5Clambda"> is too low, a singularity of the least squares problem, if present, is expressed by strongly fluctuating values in the resistivity distribution in the subsurface. In the opposite case, if <img src="https://latex.codecogs.com/png.latex?%5Clambda"> is too large, the resistivity distribution becomes very smooth.</p>
 <p>Here we can try out what influence the regularization parameter has on the solution of our problem.</p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">lam <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">lam <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">10</span></span></code></pre></div>
+font-style: inherit;">10</span></span></code></pre></div></div>
 </div>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">modwenner <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">modwenner <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> ertwenner.invert(wenner, lam<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -961,37 +853,45 @@ font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">False</span>)<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
+font-style: inherit;">;</span></span></code></pre></div></div>
 </div>
 <p>The following figures illustrate the relationship between the model parameters (<img src="https://latex.codecogs.com/png.latex?%5Crho(%5Cmathbf%20r)">) and the measured apparent resistivity (<code>Data</code>) and the model response (<code>Response</code>).</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">ertwenner.showResultAndFit(cMap<span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">ertwenner.showResultAndFit(cMap<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"RdBu_r"</span>)<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
+font-style: inherit;">;</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-12-output-1.png" width="659" height="469"></p>
+<div>
+<figure class="figure">
+<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-12-output-1.png" width="659" height="469" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The Goldbach flows in a concrete pipe at about profile meter 12.</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">ertwenner.showModel(modwenner, cMap<span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">ertwenner.showModel(modwenner, cMap<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"RdBu_r"</span>)<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
+font-style: inherit;">;</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-13-output-1.png" width="586" height="264"></p>
+<div>
+<figure class="figure">
+<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-13-output-1.png" width="586" height="264" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Of interest is the goodness of fit, which we refer to as <em>misfit</em>. This is the relative error between data and model response. A graphical representation of this error is informative:</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">misfitwe <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">misfitwe <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> ertwenner.inv.response <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1027,14 +927,18 @@ font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"misfit (%)"</span>)<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
+font-style: inherit;">;</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-14-output-1.png" width="599" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion_files/figure-html/cell-14-output-1.png" width="599" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The global misfit is described with the <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2">-statistic and amounts to</p>
 <div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">ertwenner.inv.chi2()</span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">ertwenner.inv.chi2()</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="172">
 <pre><code>0.8469349648613855</code></pre>
 </div>
@@ -1077,7 +981,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Problem 💻
+<span class="screen-reader-only">Important</span>Problem 💻
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1087,7 +991,7 @@ Problem 💻
 <p>The <code>Julia</code> package <code>Proj.jl</code> offers all functionality that is required.</p>
 <p>After installing the package using <code>Julia</code>’s package manager from the REPL, we are ready to go:</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
 background-color: null;
@@ -1098,7 +1002,7 @@ font-style: inherit;">using</span> <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">DataFrames</span>, <span class="bu" style="color: null;
 background-color: null;
-font-style: inherit;">CSV</span></span></code></pre></div>
+font-style: inherit;">CSV</span></span></code></pre></div></div>
 </div>
 <p>Let’s assume that we have downloaded a set of coordinates from a handheld GPS receiver. The content of the data file <code>coords.dat</code> may look like this:</p>
 <pre class="shell"><code># lat, lon
@@ -1106,7 +1010,7 @@ font-style: inherit;">CSV</span></span></code></pre></div>
 50.982648, 13.530406</code></pre>
 <p>We first read in the data:</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">df <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1118,17 +1022,17 @@ font-style: inherit;">"coords.dat"</span>, delim<span class="op" style="color: #
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">","</span>))</span></code></pre></div>
+font-style: inherit;">","</span>))</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div class="data-frame"><p>2 rows × 2 columns</p>
-<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="data-frame caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"># lat</th>
 <th data-quarto-table-cell-role="th">lon</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th" title="Float64">Float64</th>
 <th data-quarto-table-cell-role="th" title="Float64">Float64</th>
@@ -1136,12 +1040,12 @@ font-style: inherit;">","</span>))</span></code></pre></div>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>50.9248</td>
 <td>13.3306</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>50.9826</td>
 <td>13.5304</td>
 </tr>
@@ -1152,11 +1056,11 @@ font-style: inherit;">","</span>))</span></code></pre></div>
 </div>
 <p>Next we arrange the data such that it is suitable for processing with <code>Proj.jl</code>:</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1">latlon <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1">latlon <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">Array</span>(df)</span></code></pre></div>
+font-style: inherit;">Array</span>(df)</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>2×2 Matrix{Float64}:
  50.9248  13.3306
@@ -1165,7 +1069,7 @@ font-style: inherit;">Array</span>(df)</span></code></pre></div>
 </div>
 <p>The following step is essential. Since we transform data from one coordinate system into another, we have to inform <code>Proj.jl</code> about the source and target systems. To this end, we exploit the convenient EPSG codes.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1">trans <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1">trans <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> Proj.<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1173,7 +1077,7 @@ font-style: inherit;">Transformation</span>(<span class="st" style="color: #2079
 background-color: null;
 font-style: inherit;">"EPSG:4326"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"EPSG:25833"</span>)</span></code></pre></div>
+font-style: inherit;">"EPSG:25833"</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>Transformation
     source: WGS 84
@@ -1183,7 +1087,7 @@ font-style: inherit;">"EPSG:25833"</span>)</span></code></pre></div>
 </div>
 <p>The next lines will finally transform our GPS coordinates into UTM zone 33 coordinates which we refer to as <em>easting</em> and <em>northing</em>:</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1">etrs <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1">etrs <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1191,6 +1095,7 @@ font-style: inherit;">trans</span>(latlon[i, <span class="op" style="color: #5E5
 background-color: null;
 font-style: inherit;">:</span>]) for i <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
@@ -1229,7 +1134,7 @@ background-color: null;
 font-style: inherit;">@show</span> easting</span>
 <span id="cb8-7"><span class="pp" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">@show</span> northing;</span></code></pre></div>
+font-style: inherit;">@show</span> northing;</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>easting = [382670.42457542894, 396843.0546304857]
 northing = [5.642793241297958e6, 5.648923257065746e6]</code></pre>
@@ -1256,13 +1161,13 @@ northing = [5.642793241297958e6, 5.648923257065746e6]</code></pre>
 
 <p>This is a post with executable code.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="fl" style="color: #AD0000;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">1</span></span></code></pre></div>
+font-style: inherit;">1</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>2</code></pre>
 </div>
@@ -1294,7 +1199,7 @@ font-style: inherit;">1</span></span></code></pre></div>
 <section id="why-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="why-quarto">Why Quarto?</h2>
 <p>Recently, I discovered <a href="http://quarto.org">Quarto</a>, which offers a functionality that I was missing in other tools.</p>
-<p></p><div id="tweet-21183"></div><script>tweet={"url":"https:\/\/twitter.com\/ruboerner\/status\/1576608085971533826","author_name":"Ralph-Uwe Börner","author_url":"https:\/\/twitter.com\/ruboerner","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003E. \u003Ca href=\"https:\/\/twitter.com\/quarto_pub?ref_src=twsrc%5Etfw\"\u003E@quarto_pub\u003C\/a\u003E is the discovery of the year when it comes to providing lecture material. \u003Ca href=\"https:\/\/twitter.com\/hashtag\/quartopub?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#quartopub\u003C\/a\u003E\u003C\/p\u003E&mdash; Ralph-Uwe Börner (@ruboerner) \u003Ca href=\"https:\/\/twitter.com\/ruboerner\/status\/1576608085971533826?ref_src=twsrc%5Etfw\"\u003EOctober 2, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-21183").innerHTML = tweet["html"];</script><p></p>
+<!--  -->
 </section>
 <section id="what-is-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
@@ -1372,7 +1277,7 @@ jupyter: "julia-1.8"
 ---</code></pre>
 <p>The remaining cells are just plain Jupyter code cells.</p>
 <div id="6edaf1de-f7c7-4a32-8fdc-327c7b37fbd8" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
 background-color: null;
@@ -1381,10 +1286,10 @@ font-style: inherit;">Plots</span></span>
 background-color: null;
 font-style: inherit;">theme</span>(<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">:</span>vibrant)</span></code></pre></div>
+font-style: inherit;">:</span>vibrant)</span></code></pre></div></div>
 </div>
 <div id="83f99dcd-49cf-48bf-b4d4-eef1df081c0e" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">x <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1394,13 +1299,13 @@ font-style: inherit;">0.0</span>, <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>π, <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">101</span>)</span></code></pre></div>
+font-style: inherit;">101</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>0.0:0.06283185307179587:6.283185307179586</code></pre>
 </div>
 </div>
 <div id="7cf527dc-e674-4597-b4a0-e6b65e95e542" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">plot</span>(x, <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1416,9 +1321,13 @@ font-style: inherit;">"x"</span>, ylabel<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"y(x)"</span>)</span></code></pre></div>
+font-style: inherit;">"y(x)"</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-<p><img src="https://ruboerner.github.io/Blog/posts/jupyter/index_files/figure-html/cell-4-output-1.svg" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://ruboerner.github.io/Blog/posts/jupyter/index_files/figure-html/cell-4-output-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 

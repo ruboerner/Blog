@@ -3,7 +3,8 @@ title: "What is Bayesian inference"
 author: "Ralph-Uwe Börner"
 date: "2022-12-02"
 categories: [science,chatgpt]
-jupyter: julia-1.8
+jupyter: julia-1.12
+draft: true
 ---
 
 # What is Bayesian inference?

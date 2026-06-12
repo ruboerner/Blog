@@ -1,5 +1,5 @@
 ---
-jupyter: julia-1.9
+jupyter: julia-1.12
 date: 2023-02-06
 categories: [code, julia, climate]
 ---

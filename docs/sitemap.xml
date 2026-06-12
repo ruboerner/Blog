@@ -2,50 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ruboerner.github.io/Blog/about.html</loc>
-    <lastmod>2022-11-29T10:14:04.570Z</lastmod>
+    <lastmod>2022-11-29T10:14:04.000Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/jupyter/index.html</loc>
-    <lastmod>2022-10-26T12:05:14.218Z</lastmod>
+    <lastmod>2026-06-12T06:17:50.275Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/DC_in_the_park/pygimli_inversion.html</loc>
-    <lastmod>2022-11-29T10:14:04.583Z</lastmod>
+    <lastmod>2026-06-12T06:13:29.186Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/warming_stripes/Warming_Stripes_Makie.html</loc>
-    <lastmod>2023-11-09T17:04:11.949Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruboerner.github.io/Blog/posts/Bayes/index.html</loc>
-    <lastmod>2023-02-06T11:29:11.712Z</lastmod>
+    <lastmod>2026-06-12T06:15:03.490Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/CO₂/index.html</loc>
-    <lastmod>2023-02-06T11:29:36.729Z</lastmod>
+    <lastmod>2023-02-06T11:29:36.000Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/post-with-code/index.html</loc>
-    <lastmod>2022-10-26T12:05:14.219Z</lastmod>
+    <lastmod>2026-06-12T06:17:29.646Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/coordinates/index.html</loc>
-    <lastmod>2023-01-07T14:43:18.054Z</lastmod>
+    <lastmod>2026-06-12T06:15:39.094Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/Paths/index.html</loc>
-    <lastmod>2023-11-09T17:02:57.347Z</lastmod>
+    <lastmod>2023-11-09T17:02:57.000Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/welcome/index.html</loc>
-    <lastmod>2022-10-26T12:05:14.219Z</lastmod>
+    <lastmod>2026-06-12T06:18:46.889Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/posts/Julia-and-Quarto/index.html</loc>
-    <lastmod>2022-10-26T12:05:14.216Z</lastmod>
+    <lastmod>2022-10-26T12:05:14.000Z</lastmod>
   </url>
   <url>
     <loc>https://ruboerner.github.io/Blog/index.html</loc>
-    <lastmod>2022-10-26T12:05:14.215Z</lastmod>
+    <lastmod>2022-10-26T12:05:14.000Z</lastmod>
   </url>
 </urlset>
